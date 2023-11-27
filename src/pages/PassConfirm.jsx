@@ -37,15 +37,17 @@ const PassConfirm = () => {
       return;
     }
 
-    const token = localStorage.getItem('Token');
+    const token = localStorage.getItem("Token");
 
     try {
       const data = {
-        password, confirm_password, token
+        password,
+        confirm_password,
+        token,
       };
 
       const headers = {
-        Authorization: `Bearer ${token}`, // Include the token in the headers
+        Authorization: `Bearer ${token}`
       };
 
       const response = await axios.patch(
@@ -53,9 +55,8 @@ const PassConfirm = () => {
         { headers, data }
       );
 
-      if (response.status === 200) {
+      if (response.data.status === 201) {
         toast.success("Password successfully reset");
-        // Redirect to login page using useNavigate
         navigate("/login");
       } else {
         const errorData = response.data;
@@ -74,7 +75,7 @@ const PassConfirm = () => {
       <form onSubmit={handleResetPassword}>
         <label>New Password:</label>
         <input
-          type={showpassword ? "text" : "password"} // Toggle password type for new password
+          type={showpassword ? "text" : "password"} 
           value={password}
           onChange={(e) => setpassword(e.target.value)}
           required
@@ -85,7 +86,7 @@ const PassConfirm = () => {
 
         <label>Confirm Password:</label>
         <input
-          type={showconfirm_password ? "text" : "password"} // Toggle password type for confirm password
+          type={showconfirm_password ? "text" : "password"} 
           value={confirm_password}
           onChange={(e) => setconfirm_password(e.target.value)}
           required

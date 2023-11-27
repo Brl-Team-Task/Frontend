@@ -27,8 +27,10 @@ const Verify = () => {
         toast.success("OTP verified! Redirecting ...");
         const token = response.data.token;
         localStorage.setItem('Token', token);
-        navigate("/attendance");
-      } else if (response.status === 400) {
+        setTimeout(() => {
+          navigate("/attendance");
+        }, 2000);
+      } else if (response.data.status === 401) {
         toast.error("Invalid OTP, try again");
       } else {
         toast.error("Something went wrong");
