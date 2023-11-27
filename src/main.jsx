@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
-import Shifa from "./Shifa";
+import App from "../src/Components/App";
+import "./style.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <>
-    <Shifa />
+    <App />
   </>
 );

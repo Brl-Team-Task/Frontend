@@ -11,7 +11,7 @@
 }
 
 body {
-  background: url(img.jpeg);
+  background: url(../src/assets/img.jpeg);
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,20 +19,22 @@ body {
 }
 
 .Signimage {
-  width: 100vw;
   display: flex;
   flex-direction: column;
 }
+
 .header {
   display: flex;
   align-items: center;
   justify-content: center;
 }
+
 .header img {
   height: 7.5rem;
   width: 7rem;
   margin-top: 5rem;
 }
+
 .header p {
   font-size: 2.3rem;
   color: white;
@@ -44,6 +46,7 @@ body {
 .submit {
   cursor: pointer;
 }
+
 .SignLayout {
   background-color: #5882c17d;
   height: 27rem;
@@ -63,6 +66,7 @@ body {
   font-weight: 700;
   font-size: 2rem;
 }
+
 .SignLayout label {
   font-weight: 400;
   color: white;
@@ -71,6 +75,7 @@ body {
   margin-top: 2rem;
   padding: 2px;
 }
+
 .SignLayout input {
   width: 20rem;
   height: 2.5rem;
@@ -79,24 +84,29 @@ body {
   border: solid 1px #bcbec0;
   border-radius: 0.6rem;
 }
+
 .SignLayout input:focus {
   border: solid 1px #bcbec0;
   outline: none;
 }
+
 ::placeholder {
   color: white;
   font-weight: 400;
   font-size: 0.8rem;
 }
+
 .SignLayout p {
   color: white;
   font-weight: 400;
   font-size: 0.9rem;
   margin-top: -0.7rem;
 }
+
 .SignLayout a {
   text-decoration: none;
 }
+
 .SignLayout button {
   background-color: black;
   color: white;
@@ -110,16 +120,19 @@ body {
   border: none;
   outline: none;
 }
+
 button:focus {
   outline: none;
   border: none;
 }
+
 .SignLayout i {
   position: relative;
   top: -1.5rem;
   left: 18rem;
   color: white;
 }
+
 .VerifyLayout {
   background-color: #5882c17d;
   width: 80%;
@@ -132,17 +145,19 @@ button:focus {
   backdrop-filter: blur(10px);
   justify-content: space-evenly;
 }
+
 .Forgot {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
   gap: 20px;
 }
+
 .Forgot h1 {
   font-size: 2.5rem;
 }
+
 .Forgot input,
 .VerifyInput {
   background-color: transparent;
@@ -155,6 +170,7 @@ button:focus {
   padding: 1rem;
   margin-bottom: 20px;
 }
+
 .Forgot button {
   width: 20rem;
   display: block;
@@ -171,10 +187,12 @@ button:focus {
   height: 37rem;
   width: 34rem;
 }
+
 .VerifyLayout a {
   font-size: 1rem;
   color: white;
 }
+
 .VerifyButton {
   width: 9.5rem;
   display: block;
@@ -192,6 +210,7 @@ button:focus {
   flex-direction: column;
   justify-content: center;
 }
+
 .Verify h1 {
   font-size: 2.7rem;
   margin-bottom: 4rem;
