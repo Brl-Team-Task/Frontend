@@ -1,10 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Home from './assets/Components/home'
 
+import Shifa from './Shifa'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <>
-    <Home />
+  <Shifa/>
   </>
 )
