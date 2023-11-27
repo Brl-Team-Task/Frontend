@@ -4,6 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../assets/AKGEC.png";
+import "./Signup.css";
 
 const Signup = () => {
   const [userId, setUserId] = useState("");
@@ -29,7 +30,7 @@ const Signup = () => {
       console.log(response.data);
       if (response.status === 201) {
         toast.success("OTP sent to your email");
-        // Delay navigation to verify page for 3 seconds
+        // Delay navigation to verify page for 1 seconds
         setTimeout(() => {
           navigate("/verify");
         }, 1000);
@@ -69,7 +70,7 @@ const Signup = () => {
             value={userId}
             onChange={(e) => setUserId(e.target.value)}
             required
-            placeholder="username"
+            placeholder="Username"
           />
           <br />
           <label>Password</label>
@@ -77,7 +78,7 @@ const Signup = () => {
             type={showPassword ? "text" : "password"}
             value={password}
             required
-            placeholder="password"
+            placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
           {showPassword ? (
