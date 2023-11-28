@@ -1,0 +1,11 @@
+/* Eye disappear for microsoft explorer */
+input[type=password]::-ms-reveal,
+input[type=password]::-ms-clear{
+  display: none;
+}
+/* for other browsers */
+input[type=password]::-webkit-credentials-auto-fill-button,
+input[type=password]::-webkit-credentials-auto-fill-button:focus,
+input[type=password]::-webkit-credentials-auto-fill-button:hover {
+  display: none;
+}

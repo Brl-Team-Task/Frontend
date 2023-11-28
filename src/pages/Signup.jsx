@@ -4,6 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../assets/AKGEC.png";
+import "./Signup.css";
 
 const Signup = () => {
   const [userId, setUserId] = useState("");
@@ -69,7 +70,7 @@ const Signup = () => {
             value={userId}
             onChange={(e) => setUserId(e.target.value)}
             required
-            placeholder="username"
+            placeholder="Username"
           />
           <br />
           <label>Password</label>
@@ -77,7 +78,7 @@ const Signup = () => {
             type={showPassword ? "text" : "password"}
             value={password}
             required
-            placeholder="password"
+            placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
           {showPassword ? (
