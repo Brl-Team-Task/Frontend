@@ -4,7 +4,7 @@ import Signup from "../pages/Signup";
 import Verify from "../pages/Verify";
 import Forgot from "../pages/Forgot";
 import PassConfirm from "../pages//PassConfirm";
-import Attendance from "../pages/attendance";
+import SDashboard from "../pages/sdashboard";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Route path="/Verify" element={<Verify />} />
         <Route path="/Forgot" element={<Forgot />} />
         <Route path="/PassConfirm" element={<PassConfirm />} />
-        <Route path="/attendance" element={<Attendance />} />
+        <Route path="/sdashboard" element={<SDashboard />} />
       </Routes>
     </BrowserRouter>
   );

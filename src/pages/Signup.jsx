@@ -4,6 +4,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../assets/AKGEC.png";
+import "./Signup.css";
 
 const Signup = () => {
   const [userId, setUserId] = useState("");
@@ -27,7 +28,6 @@ const Signup = () => {
         "https://erp-backend-mqly.onrender.com/api/login/",
         data
       );
-      console.log(response.data);
       if (response.data.status === 201) {
         toast.success("OTP sent to your email");
         setTimeout(() => {
@@ -52,7 +52,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="Signimage">
+    <div id="main" className="Signimage">
       <div className="header">
         <img
           src="https://www.akgec.ac.in/wp-content/themes/twentysixteen/img/AKGEC_1_0.png"
@@ -69,7 +69,7 @@ const Signup = () => {
             value={userId}
             onChange={(e) => setUserId(e.target.value)}
             required
-            placeholder="username"
+            placeholder="Username"
           />
           <br />
           <label>Password</label>
@@ -77,7 +77,7 @@ const Signup = () => {
             type={showPassword ? "text" : "password"}
             value={password}
             required
-            placeholder="password"
+            placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
           />
           {showPassword ? (

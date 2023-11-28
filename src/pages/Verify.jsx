@@ -4,7 +4,7 @@ import VerifyImg from "../assets/VerifyImg.png";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Attendance from "./attendance";
+import "./Verify.css";
 
 const Verify = () => {
   const [email, setEmail] = useState("");
@@ -26,17 +26,22 @@ const Verify = () => {
       if (response.data.status === 201) {
         toast.success("OTP verified! Redirecting ...");
         const token = response.data.token;
-        localStorage.setItem('Token', token);
-        setTimeout(() => {
-          navigate("/attendance");
-        }, 2000);
+        localStorage.setItem("Token", token);
+        if(response.data.role === "student"){
+          setTimeout(() => {
+            navigate("/sdashboard");
+          }, 2000);
+        }else if(response.data.role === "faculty"){
+          setTimeout(() => {
+            navigate("/fdashboard");
+          }, 2000);
+        }
       } else if (response.data.status === 401) {
         toast.error("Invalid OTP, try again");
       } else {
         toast.error("Something went wrong");
       }
     } catch (error) {
-      console.error(error);
       toast.error(
         "An error occurred while verifying the OTP. Please try again later."
       );
@@ -45,7 +50,7 @@ const Verify = () => {
 
   return (
     <>
-      <div className="Signimage">
+      <div id="main" className="Signimage">
         <div className="VerifyLayout">
           <div className="VerifyImage">
             <img src={VerifyImg} alt="" />
@@ -53,7 +58,7 @@ const Verify = () => {
           <div className="Verify">
             <h1>OTP Verification</h1>
             <form onSubmit={handleSubmit}>
-              <label>Enter the OTP sent to the mail</label>
+              <label>Enter the OTP sent to the Email</label>
 
               <input
                 className="VerifyInput"
@@ -67,9 +72,11 @@ const Verify = () => {
               <label>OTP:</label>
               <input
                 className="VerifyInput"
+                id="Otp"
                 type="text"
                 required
                 value={otp}
+                placeholder="OTP"
                 onChange={(e) => setOtp(e.target.value)}
               />
               <br />

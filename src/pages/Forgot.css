@@ -1,0 +1,154 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  #main{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .Signimage {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .ForgotImage img {
+      height: 37rem;
+      width: 34rem;
+    }
+    
+    .ForgotLayout a {
+      font-size: 1rem;
+      color: white;
+    }
+    .Forgot h1 {
+      font-size: 2.7rem;
+      margin-bottom: 4rem;
+    }
+    .submit {
+      cursor: pointer;
+    }
+    .Forgot label{
+      color: white;
+     margin-bottom: 1rem;
+    }
+    .ForgotLayout {
+      background-color: #5882c17d;
+      width: 60rem;
+      align-self: center;
+      height: 35rem;
+      border: solid 3px #5882c1;
+      border-radius: 2.5rem;
+      display: flex;
+      backdrop-filter: blur(10px);
+      justify-content: space-evenly;
+    }
+    .Forgot {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+      }
+      .Forgot input {
+        background-color: transparent;
+        width: 20rem;
+        display: block;
+        outline: none;
+        border: solid 1px #bcbec0;
+        height: 40px;
+        border-radius: 0.8rem;
+        padding: 1rem;
+        margin-bottom: 20px;
+      }
+      
+      .Forgot button {
+        width: 20rem;
+        display: block;
+        outline: none;
+        border: solid 1px #bcbec0;
+        height: 40px;
+        border-radius: 0.8rem;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+      }
+/* responsiveness */
+      @media(max-width:1100px){
+        .Forgot h1{
+          font-size: 2.5rem !important;
+        }
+    }
+@media(max-width:585px){
+    .ForgotLayout{
+      flex-direction: column-reverse !important;
+      align-items: center;
+ height: 50rem;
+ width: 40rem;
+    }
+    .ForgotImage img{
+        height: 30rem !important;
+    }
+    .Forgot h1{
+margin-top: -25px;
+margin-bottom: 0;
+    }
+}
+@media(max-width:385px){
+    .ForgotLayout{
+ height: 60rem;
+ width: 33rem;
+    }
+.Forgot input,.Forgot Button{
+    height:30px
+}
+}
+@media(max-width:385px){
+    .ForgotLayout{
+ height: 60rem;
+ width: 33rem;
+    }
+.Forgot input,.Forgot Button{
+    height:30px
+}
+}
+@media(max-width:260px){
+ *{
+    font-size: 7px !important; 
+ }
+ .ForgotImage img{
+    height: 25rem !important;
+    width: 25rem;
+}
+.ForgotLayout{
+    width: 25rem;
+       }
+       .Forgot h1{
+        margin-top: -70px;
+            }
+}
+@media(max-width:180px){
+    *{
+       font-size: 6.5px !important; 
+    }
+    .ForgotImage img{
+       height: 20rem !important;
+       width: 20rem;
+   }
+   .ForgotLayout{
+       width: 18rem;
+          }
+          .Forgot input,.Forgot Button{
+         width:15rem;
+        }
+        .Forgot h1{
+font-size: 1.8rem !important;
+                }
+          
+   }
