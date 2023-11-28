@@ -3,7 +3,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function Attendance() {
+export default function SDashboard() {
   const token = localStorage.getItem("Token");
 
   const headers = {
