@@ -4,12 +4,8 @@ import VerifyImg from "../assets/VerifyImg.png";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-<<<<<<< HEAD
-import Attendance from "./attendance";
 import './Verify.css';
-=======
 import SDashboard from "./sdashboard";
->>>>>>> origin/main
 
 const Verify = () => {
   const [email, setEmail] = useState("");
