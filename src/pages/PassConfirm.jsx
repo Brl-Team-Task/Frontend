@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate ,Link} from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Desktop from "../assets/Desktop.png";
+import './PassConfirm.css'
 
 const PassConfirm = () => {
   const [password, setpassword] = useState("");
@@ -69,41 +71,68 @@ const PassConfirm = () => {
   };
 
   return (
-    <div className="VerifyLayout">
+    <>
+    <div className="Signimage">
+    <div className="PassLayout">
+      <div className="PassImage">
+        <img src={Desktop} alt="" />
+      </div>
+      <div className="Pass">
       <h1>Reset Password</h1>
 
       <form onSubmit={handleResetPassword}>
-        <label>New Password:</label>
         <input
           type={showpassword ? "text" : "password"} 
           value={password}
           onChange={(e) => setpassword(e.target.value)}
           required
+          placeholder="New Password"
         />
-        <button type="button" onClick={handleShowpassword}>
+        {showpassword ? (
+            <i
+            className="fa fa-regular fa-eye"
+            onClick={handleShowpassword}
+          ></i>
+        ) : (
+          <i
+            className="fa-regular fa-eye-slash "
+            onClick={handleShowpassword}
+          ></i>
+        )}
+        {/* <button type="button" onClick={handleShowpassword}>
           {showpassword ? "Hide New Password" : "Show New Password"}
-        </button>
-
-        <label>Confirm Password:</label>
+        </button> */}
         <input
           type={showconfirm_password ? "text" : "password"} 
           value={confirm_password}
           onChange={(e) => setconfirm_password(e.target.value)}
-          required
+          required placeholder="Confirm Password"
         />
-        <button type="button" onClick={handleShowconfirm_password}>
+        {/* <button type="button" onClick={handleShowconfirm_password}>
           {showconfirm_password
             ? "Hide Confirm Password"
             : "Show Confirm Password"}
-        </button>
+        </button> */} 
+         {showconfirm_password ? (
+            <i
+            className="fa fa-regular fa-eye"
+            onClick={handleShowconfirm_password}
+          ></i>
+        ) : (
+          <i
+            className="fa-regular fa-eye-slash "
+            onClick={handleShowconfirm_password}
+          ></i>
+        )}
 
         <button type="submit" disabled={!isPasswordsMatch}>
           Reset Password
         </button>
       </form>
-
+      <Link to={"/"}>Back to Sign in</Link>
+      </div>
       <ToastContainer />
-    </div>
+    </div> </div></>
   );
 };
 
