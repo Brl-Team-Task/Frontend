@@ -1,0 +1,31 @@
+*{
+    font-family: 'Inter', sans-serif;
+font-family: 'Roboto Slab', serif;
+}
+p{
+    font: inter;
+    font-size: 2vw;
+    padding-bottom: 1vw;
+    font-weight: bolder;
+    text-decoration: none;
+}
+thead{
+    padding:1vw ;
+}
+th{
+    border-bottom: .2vw solid red;
+    border-top: .2vw solid red;
+    padding: 0.6vw 12vw;
+    font-size: 1.25vw;
+}
+td{
+    font-size:1vw ;
+    font-weight: bold;
+    padding: 0.6vw 12vw;
+    border-bottom: 2px solid gray;
+}
+.poster>button{ 
+    background-color:#00A7F4;
+    width: 10vw;
+    border: none;
+}
