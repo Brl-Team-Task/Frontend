@@ -1,0 +1,137 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  #root{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+.Signimage {
+    display: flex;
+    flex-direction: column;
+  }
+  .PassLayout {
+    background-color: #5882c17d;
+    width: 60rem;
+    align-self: center;
+    height: 35rem;
+    border: solid 3px #5882c1;
+    border-radius: 2.5rem;
+    display: flex;
+    backdrop-filter: blur(10px);
+    justify-content: space-evenly;
+  }  
+  .PassImage img {
+    height: 34rem;
+    width: 34rem;
+  }
+  
+  .PassLayout a {
+    font-size: 1rem;
+    color: white;
+  }
+  .Pass h1 {
+    font-size: 2.7rem !important;
+    margin-bottom: 4rem;
+  }
+  .submit {
+    cursor: pointer;
+  }
+  .Pass {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+  .Pass input {
+    background-color: transparent;
+    width: 20rem;
+    display: block;
+    outline: none;
+    border: solid 1px #bcbec0;
+    height: 40px;
+    border-radius: 0.8rem;
+    padding: 1rem;
+    margin-bottom: 20px;
+  }
+  .Pass button {
+    width: 20rem;
+    display: block;
+    outline: none;
+    border: solid 1px #bcbec0;
+    height: 40px;
+    border-radius: 0.8rem;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+  }
+  .Pass i {
+    position: relative;
+    top: -50px;
+    left: 18rem;
+    color: white;
+  }
+  /* responsiveness */
+  @media(max-width:940px){
+    .Pass i {
+        top: -45px;
+      }
+      .Pass h1{
+        margin-bottom: 0;
+        }
+  }
+  @media(max-width:585px){
+    .PassLayout{
+      flex-direction: column !important;
+      align-items: center;
+ height: 60rem;
+ width: 40rem;
+    }
+    .PassImage img{
+        height: 30rem !important;
+    }
+    .Pass h1{
+margin-top: -25px;
+margin-bottom: 0;
+    }
+    .Pass input,.Pass Button{
+        height:30px
+    }
+::placeholder{
+    font-size: 1rem !important;
+}
+.Pass i {
+    top: -40px;
+  }
+}
+@media(max-width:300px){
+    .PassLayout{
+ width: 20rem;
+    }
+    .PassImage img{
+        height: 20rem !important;
+        width: 20rem !important;
+    }
+    .Pass h1{
+font-size: 2rem !important;
+    }
+    .Pass input,.Pass Button{
+        height:30px;
+        width:15rem;
+    }
+::placeholder{
+    font-size: 1rem !important;
+}
+.Pass i {
+    top: -40px;
+    left: 12.5rem;
+  }
+}
