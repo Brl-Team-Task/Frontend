@@ -26,8 +26,6 @@ const Forgot = () => {
         "https://erp-backend-mqly.onrender.com/api/passwordreset/",
         data
       );
-      const tokens = response.data.token;
-      console.log(response.data);
       if (response.data.status === 201) {
         toast.success("Password reset link sent to your email");
         localStorage.setItem("Token", tokens);
@@ -39,7 +37,6 @@ const Forgot = () => {
       if (error.response && error.response.status === 404) {
         toast.error("User Not Found");
       } else {
-        console.error(error);
         toast.error("Internal Server Error");
       }
     }

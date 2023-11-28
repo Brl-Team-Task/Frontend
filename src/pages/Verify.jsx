@@ -28,7 +28,7 @@ const Verify = () => {
         const token = response.data.token;
         localStorage.setItem('Token', token);
         setTimeout(() => {
-          navigate("/attendance");
+          navigate("/sdashboard");
         }, 2000);
       } else if (response.data.status === 401) {
         toast.error("Invalid OTP, try again");
@@ -36,7 +36,6 @@ const Verify = () => {
         toast.error("Something went wrong");
       }
     } catch (error) {
-      console.error(error);
       toast.error(
         "An error occurred while verifying the OTP. Please try again later."
       );

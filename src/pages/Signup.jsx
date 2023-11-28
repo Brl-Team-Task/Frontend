@@ -27,7 +27,6 @@ const Signup = () => {
         "https://erp-backend-mqly.onrender.com/api/login/",
         data
       );
-      console.log(response.data);
       if (response.data.status === 201) {
         toast.success("OTP sent to your email");
         setTimeout(() => {

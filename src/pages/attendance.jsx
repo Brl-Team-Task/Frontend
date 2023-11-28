@@ -30,7 +30,6 @@ export default function Attendance() {
         toast.error("Failed to submit attendance. Please try again.");
       }
     } catch (error) {
-      console.error(error);
       toast.error("Internal Server Error");
     }
   };
@@ -38,7 +37,7 @@ export default function Attendance() {
   return (
     <>
       <div>
-        <button onClick={handleSubmit}>Click here</button>
+        
       </div>
       <ToastContainer />
     </>
