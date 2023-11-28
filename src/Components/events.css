@@ -1,8 +1,7 @@
-*{
+:root{
     font-family: 'Inter', sans-serif;
-font-family: 'Roboto Slab', serif;
 }
-p{
+.heading{
     font: inter;
     font-size: 2vw;
     padding-bottom: 1vw;

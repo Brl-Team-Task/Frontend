@@ -36,7 +36,7 @@ const Events = () => {
 
   return (
     <div>
-      <p>Upcoming Events</p>
+      <p className='heading'>Upcoming Events</p>
       {loading && <p>Loading events...</p>}
       {error && <p>Error fetching events.</p>}
       {!loading && !error && (
