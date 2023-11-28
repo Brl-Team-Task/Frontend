@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -8,7 +9,7 @@ const PassConfirm = () => {
   const [confirm_password, setconfirm_password] = useState("");
   const [showpassword, setShowpassword] = useState(false);
   const [showconfirm_password, setShowconfirm_password] = useState(false);
-
+  const navigate = useNavigate();
   const isPasswordsMatch = password === confirm_password;
 
   const handleShowpassword = () => {
@@ -37,26 +38,26 @@ const PassConfirm = () => {
       return;
     }
 
-    const token = localStorage.getItem('Token');
+    const token = localStorage.getItem("Token");
 
     try {
-      const data = {
-        password, confirm_password, token
-      };
-
       const headers = {
-        Authorization: `Bearer ${token}`, // Include the token in the headers
+        Authorization: `Bearer ${token}`
       };
 
       const response = await axios.patch(
-        "https://erp-backend-mqly.onrender.com/api/password/reset/",
-        { headers, data }
+        "https://erp-backend-mqly.onrender.com/api/password/reset/",{
+          password : password,
+          confirm_password : confirm_password,
+          token : token
+        }
       );
 
-      if (response.status === 200) {
-        toast.success("Password successfully reset");
-        // Redirect to login page using useNavigate
-        navigate("/login");
+      if (response.data.status === 201) {
+        toast.success("Password successfully reset! Sign-in again");
+        setTimeout(() => {
+          navigate("/");
+        }, 2000);
       } else {
         const errorData = response.data;
         toast.error(errorData.error || "Something went wrong");
@@ -74,7 +75,7 @@ const PassConfirm = () => {
       <form onSubmit={handleResetPassword}>
         <label>New Password:</label>
         <input
-          type={showpassword ? "text" : "password"} // Toggle password type for new password
+          type={showpassword ? "text" : "password"} 
           value={password}
           onChange={(e) => setpassword(e.target.value)}
           required
@@ -85,7 +86,7 @@ const PassConfirm = () => {
 
         <label>Confirm Password:</label>
         <input
-          type={showconfirm_password ? "text" : "password"} // Toggle password type for confirm password
+          type={showconfirm_password ? "text" : "password"} 
           value={confirm_password}
           onChange={(e) => setconfirm_password(e.target.value)}
           required

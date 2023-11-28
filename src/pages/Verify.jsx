@@ -4,8 +4,12 @@ import VerifyImg from "../assets/VerifyImg.png";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+<<<<<<< HEAD
 import Attendance from "./attendance";
 import './Verify.css';
+=======
+import SDashboard from "./sdashboard";
+>>>>>>> origin/main
 
 const Verify = () => {
   const [email, setEmail] = useState("");
@@ -28,14 +32,15 @@ const Verify = () => {
         toast.success("OTP verified! Redirecting ...");
         const token = response.data.token;
         localStorage.setItem('Token', token);
-        navigate("/attendance");
-      } else if (response.status === 400) {
+        setTimeout(() => {
+          navigate("/sdashboard");
+        }, 2000);
+      } else if (response.data.status === 401) {
         toast.error("Invalid OTP, try again");
       } else {
         toast.error("Something went wrong");
       }
     } catch (error) {
-      console.error(error);
       toast.error(
         "An error occurred while verifying the OTP. Please try again later."
       );

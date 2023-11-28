@@ -4,7 +4,7 @@ import Signup from "../pages/Signup";
 import Verify from "../pages/Verify";
 import Forgot from "../pages/Forgot";
 import PassConfirm from "../pages//PassConfirm";
-import Attendance from "../pages/attendance";
+import Attendance from "../pages/sdashboard";
 
 function App() {
   return (

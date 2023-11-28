@@ -10,7 +10,7 @@ const Signup = () => {
   const [userId, setUserId] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const navigate = useNavigate(); // Added useNavigate hook
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -23,17 +23,16 @@ const Signup = () => {
         user_id: userId,
         password,
       };
+      
       const response = await axios.post(
-        "https://erp-backend-mqly.onrender.com/api/register/",
+        "https://erp-backend-mqly.onrender.com/api/login/",
         data
       );
-      console.log(response.data);
-      if (response.status === 201) {
+      if (response.data.status === 201) {
         toast.success("OTP sent to your email");
-        // Delay navigation to verify page for 1 seconds
         setTimeout(() => {
           navigate("/verify");
-        }, 1000);
+        }, 2000);
       } else if (response.status === 400) {
         toast.error("A valid integer is required");
       } else {
