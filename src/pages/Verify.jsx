@@ -4,6 +4,7 @@ import VerifyImg from "../assets/VerifyImg.png";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import './Verify.css';
 import SDashboard from "./sdashboard";
 
 const Verify = () => {
@@ -52,7 +53,7 @@ const Verify = () => {
           <div className="Verify">
             <h1>OTP Verification</h1>
             <form onSubmit={handleSubmit}>
-              <label>Enter the OTP sent to the mail</label>
+              <label>Enter the OTP sent to the Email</label>
 
               <input
                 className="VerifyInput"
@@ -65,7 +66,7 @@ const Verify = () => {
               <br />
               <label>OTP:</label>
               <input
-                className="VerifyInput"
+                className="VerifyInput" id="Otp"
                 type="text"
                 required
                 value={otp}
