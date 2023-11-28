@@ -7,14 +7,14 @@ import "react-toastify/dist/ReactToastify.css";
 import "./Verify.css";
 
 const Verify = () => {
-  const [email, setEmail] = useState("");
+  const [user_id, setUserID] = useState("");
   const [otp, setOtp] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const data = { email, otp };
+    const data = { user_id, otp };
 
     try {
       const response = await axios.post(
@@ -58,18 +58,18 @@ const Verify = () => {
           <div className="Verify">
             <h1>OTP Verification</h1>
             <form onSubmit={handleSubmit}>
-              <label>Enter the OTP sent to the Email</label>
+              <label>Enter your Username</label>
 
               <input
                 className="VerifyInput"
-                type="email"
+                type="text"
                 required
-                value={email}
-                placeholder="Email"
-                onChange={(e) => setEmail(e.target.value)}
+                value={user_id}
+                placeholder="Username"
+                onChange={(e) => setUserID(e.target.value)}
               />
               <br />
-              <label>OTP:</label>
+              <label>Enter the OTP sent on your Email</label>
               <input
                 className="VerifyInput"
                 id="Otp"
