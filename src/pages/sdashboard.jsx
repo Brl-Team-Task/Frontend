@@ -4,8 +4,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import  { useState, useRef ,useEffect } from 'react';
 import './app.css';
-// import userImg from './img/user_pic.png';
-// import clgImg from './img/AKGEC_logo.png'
+import userImg from '../assets/AKGEC.png';
+import clgImg from '../assets/AKGEC.png'
 
 export default function SDashboard() {
   const token = localStorage.getItem("Token");
