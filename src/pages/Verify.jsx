@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Attendance from "./attendance";
+import './Verify.css';
 
 const Verify = () => {
   const [email, setEmail] = useState("");
@@ -51,7 +52,7 @@ const Verify = () => {
           <div className="Verify">
             <h1>OTP Verification</h1>
             <form onSubmit={handleSubmit}>
-              <label>Enter the OTP sent to the mail</label>
+              <label>Enter the OTP sent to the Email</label>
 
               <input
                 className="VerifyInput"
@@ -64,7 +65,7 @@ const Verify = () => {
               <br />
               <label>OTP:</label>
               <input
-                className="VerifyInput"
+                className="VerifyInput" id="Otp"
                 type="text"
                 required
                 value={otp}

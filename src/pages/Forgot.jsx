@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useNavigate, Link } from "react-router-dom";
 import img2 from "../assets/img2.png";
+import './Forgot.css'
 
 const Forgot = () => {
   const [email, setEmail] = useState("");
@@ -48,7 +49,7 @@ const Forgot = () => {
   return (
     <>
       <div className="Signimage">
-        <div className="VerifyLayout">
+        <div className="ForgotLayout">
           <div className="Forgot">
             <h1>Forgot Password</h1>
             <form onSubmit={handleForgotPassword}>
@@ -63,7 +64,7 @@ const Forgot = () => {
             </form>
             <Link to={"/"}>Back to Sign in</Link>
           </div>
-          <div className="VerifyImage">
+          <div className="ForgotImage">
             <img src={img2} alt="" />
           </div>
         </div>
