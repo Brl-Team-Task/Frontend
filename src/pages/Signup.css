@@ -1,11 +1,253 @@
-/* Eye disappear for microsoft explorer */
-input[type=password]::-ms-reveal,
-input[type=password]::-ms-clear{
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+#main {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url(../assets/img.jpeg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+*::-webkit-scrollbar {
   display: none;
 }
-/* for other browsers */
-input[type=password]::-webkit-credentials-auto-fill-button,
-input[type=password]::-webkit-credentials-auto-fill-button:focus,
-input[type=password]::-webkit-credentials-auto-fill-button:hover {
-  display: none;
+
+.Signimage {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header img {
+  width: 7rem;
+}
+
+.header p {
+  font-size: 2.3rem;
+  color: white;
+  font-weight: 400;
+  text-align: center;
+}
+
+.submit {
+  cursor: pointer;
+}
+
+.SignLayout {
+  background-color: #5882c17d;
+  height: 27rem;
+  width: 27rem;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem;
+  border: solid 3px #5882c1;
+  border-radius: 2.5rem;
+  backdrop-filter: blur(10px);
+  margin-top: 0;
+}
+
+.SignLayout h3 {
+  color: white;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.SignLayout label {
+  font-weight: 400;
+  color: white;
+  display: block;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  padding: 2px;
+}
+
+.SignLayout input {
+  width: 20rem;
+  height: 2.5rem;
+  background-color: transparent;
+  padding: 1rem;
+  border: solid 1px #bcbec0;
+  border-radius: 0.6rem;
+}
+
+.SignLayout input:focus {
+  border: solid 1px #bcbec0;
+  outline: none;
+}
+
+::placeholder {
+  color: white;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.SignLayout p {
+  color: white;
+  font-weight: 400;
+  font-size: 0.9rem;
+  margin-top: -0.7rem;
+}
+
+.SignLayout a {
+  text-decoration: none;
+}
+
+.SignLayout button {
+  background-color: black;
+  color: white;
+  text-align: center;
+  width: 20rem;
+  height: 2.5rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 1rem 0 0 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+  border: none;
+}
+
+.SignLayout i {
+  position: relative;
+  top: -1.75rem;
+  left: 18rem;
+  color: white;
+}
+
+/* responsiveness */
+/* Sign up page */
+@media (max-width: 1093px) {
+  .header p {
+    font-size: 1.8rem;
+  }
+  .header img {
+    height: 6rem;
+    width: 5.5rem;
+  }
+}
+@media (max-width: 725px) {
+  .header p {
+    font-size: 1.3rem;
+  }
+  .header img {
+    height: 4.5rem;
+    width: 4rem;
+  }
+}
+@media (max-width: 525px) {
+  .header p {
+    font-size: 0.8rem;
+  }
+  .header img {
+    height: 3.5rem;
+    width: 3rem;
+  }
+  .SignLayout {
+    width: 20rem;
+    height: 25rem;
+    margin-top: 3rem;
+  }
+  .SignLayout input,
+  .SignLayout button {
+    width: 15rem;
+  }
+  .SignLayout label {
+    font-size: 0.8rem;
+  }
+  .SignLayout i {
+    left: 13rem;
+  }
+}
+@media (max-width: 350px) {
+  .header {
+    flex-direction: column;
+  }
+  .SignLayout {
+    width: 14rem;
+    height: 22rem;
+    padding: 2rem;
+  }
+  .SignLayout h3 {
+    font-size: 1.4rem;
+  }
+  .SignLayout input,
+  .SignLayout button {
+    width: 9.5rem;
+  }
+  .SignLayout i {
+    left: 7rem;
+  }
+  .header p {
+    margin-top: 1rem;
+  }
+}
+@media (max-width: 235px) {
+  .SignLayout {
+    width: 10rem;
+    height: 22rem;
+  }
+  .SignLayout h3 {
+    font-size: 1.2rem;
+  }
+  .SignLayout input,
+  .SignLayout button {
+    width: 7rem;
+    font-size: 0.9rem;
+  }
+  .SignLayout i {
+    left: 5rem;
+  }
+  .SignLayout p {
+    font-size: 0.8rem;
+    margin-top: 0.4rem;
+  }
+}
+@media (max-width: 170px) {
+  .SignLayout {
+    width: 5.5rem;
+    height: 15rem;
+    padding: 1rem;
+    border-radius: 1.5rem;
+  }
+  .header p,
+  .SignLayout p {
+    font-size: 0.58rem;
+  }
+  .SignLayout input,
+  .SignLayout button {
+    width: 4rem;
+    font-size: 0.7rem;
+    padding: 0.4rem;
+    height: 1.5rem;
+  }
+  ::placeholder,
+  .SignLayout label {
+    font-size: 0.6rem;
+    margin-top: 1rem;
+  }
+  .SignLayout i {
+    display: none;
+  }
 }

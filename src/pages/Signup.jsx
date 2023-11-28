@@ -52,7 +52,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="Signimage">
+    <div id="main" className="Signimage">
       <div className="header">
         <img
           src="https://www.akgec.ac.in/wp-content/themes/twentysixteen/img/AKGEC_1_0.png"

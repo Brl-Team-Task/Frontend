@@ -45,7 +45,7 @@ const Forgot = () => {
 
   return (
     <>
-      <div className="Signimage">
+      <div id="main" className="Signimage">
         <div className="ForgotLayout">
           <div className="Forgot">
             <h1>Forgot Password</h1>

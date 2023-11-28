@@ -4,8 +4,7 @@ import VerifyImg from "../assets/VerifyImg.png";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import './Verify.css';
-import SDashboard from "./sdashboard";
+import "./Verify.css";
 
 const Verify = () => {
   const [email, setEmail] = useState("");
@@ -27,10 +26,16 @@ const Verify = () => {
       if (response.data.status === 201) {
         toast.success("OTP verified! Redirecting ...");
         const token = response.data.token;
-        localStorage.setItem('Token', token);
-        setTimeout(() => {
-          navigate("/sdashboard");
-        }, 2000);
+        localStorage.setItem("Token", token);
+        if(response.data.role === "student"){
+          setTimeout(() => {
+            navigate("/sdashboard");
+          }, 2000);
+        }else if(response.data.role === "faculty"){
+          setTimeout(() => {
+            navigate("/fdashboard");
+          }, 2000);
+        }
       } else if (response.data.status === 401) {
         toast.error("Invalid OTP, try again");
       } else {
@@ -45,7 +50,7 @@ const Verify = () => {
 
   return (
     <>
-      <div className="Signimage">
+      <div id="main" className="Signimage">
         <div className="VerifyLayout">
           <div className="VerifyImage">
             <img src={VerifyImg} alt="" />
@@ -66,10 +71,12 @@ const Verify = () => {
               <br />
               <label>OTP:</label>
               <input
-                className="VerifyInput" id="Otp"
+                className="VerifyInput"
+                id="Otp"
                 type="text"
                 required
                 value={otp}
+                placeholder="OTP"
                 onChange={(e) => setOtp(e.target.value)}
               />
               <br />
