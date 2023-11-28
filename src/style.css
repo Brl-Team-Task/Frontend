@@ -1,0 +1,217 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  background: url(../src/assets/img.jpeg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.Signimage {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header img {
+  height: 7.5rem;
+  width: 7rem;
+  margin-top: 5rem;
+}
+
+.header p {
+  font-size: 2.3rem;
+  color: white;
+  font-weight: 400;
+  margin-top: 4.5rem;
+  text-align: center;
+}
+
+.submit {
+  cursor: pointer;
+}
+
+.SignLayout {
+  background-color: #5882c17d;
+  height: 27rem;
+  width: 27rem;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem;
+  border: solid 3px #5882c1;
+  border-radius: 2.5rem;
+  backdrop-filter: blur(10px);
+}
+
+.SignLayout h3 {
+  color: white;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.SignLayout label {
+  font-weight: 400;
+  color: white;
+  display: block;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+  padding: 2px;
+}
+
+.SignLayout input {
+  width: 20rem;
+  height: 2.5rem;
+  background-color: transparent;
+  padding: 1rem;
+  border: solid 1px #bcbec0;
+  border-radius: 0.6rem;
+}
+
+.SignLayout input:focus {
+  border: solid 1px #bcbec0;
+  outline: none;
+}
+
+::placeholder {
+  color: white;
+  font-weight: 400;
+  font-size: 0.8rem;
+}
+
+.SignLayout p {
+  color: white;
+  font-weight: 400;
+  font-size: 0.9rem;
+  margin-top: -0.7rem;
+}
+
+.SignLayout a {
+  text-decoration: none;
+}
+
+.SignLayout button {
+  background-color: black;
+  color: white;
+  text-align: center;
+  width: 20rem;
+  height: 2.5rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 1rem 0 0 0;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+  border: none;
+}
+
+.SignLayout i {
+  position: relative;
+  top: -1.5rem;
+  left: 18rem;
+  color: white;
+}
+
+.VerifyLayout {
+  background-color: #5882c17d;
+  width: 80%;
+  align-self: center;
+  height: 35rem;
+  margin: 5.2rem 0 5rem 0;
+  border: solid 3px #5882c1;
+  border-radius: 2.5rem;
+  display: flex;
+  backdrop-filter: blur(10px);
+  justify-content: space-evenly;
+}
+
+.Forgot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.Forgot h1 {
+  font-size: 2.5rem;
+}
+
+.Forgot input,
+.VerifyInput {
+  background-color: transparent;
+  width: 20rem;
+  display: block;
+  outline: none;
+  border: solid 1px #bcbec0;
+  height: 40px;
+  border-radius: 0.8rem;
+  padding: 1rem;
+  margin-bottom: 20px;
+}
+
+.Forgot button {
+  width: 20rem;
+  display: block;
+  outline: none;
+  border: solid 1px #bcbec0;
+  height: 40px;
+  border-radius: 0.8rem;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.VerifyImage img {
+  height: 37rem;
+  width: 34rem;
+}
+
+.VerifyLayout a {
+  font-size: 1rem;
+  color: white;
+}
+
+.VerifyButton {
+  width: 9.5rem;
+  display: block;
+  outline: none;
+  border: solid 1px #bcbec0;
+  height: 40px;
+  border-radius: 0.8rem;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.Verify {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Verify h1 {
+  font-size: 2.7rem;
+  margin-bottom: 4rem;
+}
