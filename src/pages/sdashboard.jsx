@@ -6,9 +6,12 @@ import { useState, useRef, useEffect } from "react";
 import "./sdashboard.css";
 import userImg from "../assets/AKGEC.png";
 import clgImg from "../assets/AKGEC.png";
+import Graph from "../Components/graph";
+import Card from "../Components/card";
 
 export default function SDashboard() {
   const token = localStorage.getItem("Token");
+  const [data, setData] = useState([]);
 
   const headers = {
     Authorization: `Bearer ${token}`,
@@ -26,7 +29,7 @@ export default function SDashboard() {
         "https://erp-backend-mqly.onrender.com/api/attendance/",
         { headers, data }
       );
-      console.log(response.data);
+      setData(response.data);
 
       if (response.data.status === 201) {
         toast.success("Attendance submitted successfully");
@@ -450,6 +453,24 @@ export default function SDashboard() {
               />
             </svg>
           </button>
+        </div>
+      </div>
+      <div className="graph">
+        <div className="disc">
+          <div className="graph-section">
+            <div>
+              <p>Attendance Percentage of {data.name} ({data.section})</p>
+            </div>
+            <div>
+              <Graph data={data} />
+            </div>
+          </div>
+          <div className="carding">
+            <div className="total">Total Lectures : {data.total_classes}</div>
+            <div className="total">Percentage : {(data.present * 100 )/ data.total_classes}</div>
+            <Card prop="Total Presents" data={data.present} color="#009BE3"/>
+            <Card prop="Total Absents" data={data.absent} color="#DC3C3C"/>
+          </div>
         </div>
       </div>
       <ToastContainer />
