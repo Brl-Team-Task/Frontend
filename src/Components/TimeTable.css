@@ -1,0 +1,33 @@
+.dropdown{
+background-color:#00A7F4;
+width: fit-content;
+margin-left: 2vw;
+margin-top: 1vw;
+padding: 0.3vw;
+border-radius: 8px;
+font-weight: bold;
+}
+.head{
+    font-size: 1.5vw;
+    margin-left: 2vw;
+    text-decoration: underline;
+}
+
+img{
+     height: 80vh;
+     width: 70vw;
+     margin-left:15vw;
+}
+
+option{
+  font-size: 1vw;
+}
+button{
+    background-color:#00A7F4;
+    font-weight: bold; 
+    font-size: 1vw;
+    padding: 0.3vw;
+    border-radius: 8px;
+    border: none;
+    margin-left: 80vw;
+}
