@@ -43,10 +43,6 @@ const PassConfirm = () => {
     const token = localStorage.getItem("Token");
 
     try {
-      const headers = {
-        Authorization: `Bearer ${token}`,
-      };
-
       const response = await axios.patch(
         "https://erp-backend-mqly.onrender.com/api/password/reset/",
         {

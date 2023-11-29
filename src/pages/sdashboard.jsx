@@ -13,10 +13,6 @@ export default function SDashboard() {
   const token = localStorage.getItem("Token");
   const [data, setData] = useState([]);
 
-  const headers = {
-    Authorization: `Bearer ${token}`,
-  };
-
   const handleSubmit = async (e) => {
     const data = {
       token,
@@ -25,7 +21,7 @@ export default function SDashboard() {
     try {
       const response = await axios.post(
         "https://erp-backend-mqly.onrender.com/api/attendance/",
-        { headers, data }
+        { data }
       );
       setData(response.data);
 

@@ -22,7 +22,6 @@ const Timetable= () => {
  
   const [timetableData, setTimetableData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [selectedValue, setSelectedValue] = useState('');
 
   useEffect(() => {
@@ -35,7 +34,7 @@ const Timetable= () => {
         setTimetableData(response.data.timetable_data);
       } catch (error) {
       
-        setError(error);
+        
       } finally {
      
         setLoading(false);
