@@ -53,11 +53,6 @@ const Timetable= () => {
   if (loading) {
     return <p>Loading...</p>;
   }
-
-  if (error) {
-    return <p>Error: {error.message}</p>;
-  }
-
   
   const selectedTimetable = timetableData.find(timetable => timetable.section === selectedValue);
 
