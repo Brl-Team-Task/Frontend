@@ -18,8 +18,6 @@ export default function SDashboard() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-
     const data = {
       token,
     };
@@ -75,6 +73,13 @@ export default function SDashboard() {
     const smallUserContainer = document.querySelector(".small-user-container");
     smallUserContainer.classList.toggle("active");
   };
+
+  useEffect(() => {
+    if (window.location.pathname === '/sdashboard') {
+      handleSubmit();
+    }
+  }, []);
+  
   return (
     <>
       <div>
@@ -467,7 +472,7 @@ export default function SDashboard() {
           </div>
           <div className="carding">
             <div className="total">Total Lectures : {data.total_classes}</div>
-            <div className="total">Percentage : {(data.present * 100 )/ data.total_classes}</div>
+            <div className="total">Percentage : {(data.present * 100 )/ data.total_classes} %</div>
             <Card prop="Total Presents" data={data.present} color="#009BE3"/>
             <Card prop="Total Absents" data={data.absent} color="#DC3C3C"/>
           </div>
