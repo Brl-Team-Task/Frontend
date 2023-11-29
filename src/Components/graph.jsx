@@ -1,5 +1,5 @@
 import React from "react";
-import { PieChart, Pie, Legend, Tooltip } from "recharts";
+import { PieChart, Pie, Tooltip } from "recharts";
 
 export default function Graph({ data }) {
   const processedData = [];
