@@ -18,7 +18,7 @@ export default function SDashboard() {
   };
 
   const handleSubmit = async (e) => {
-    // e.preventDefault();
+    e.preventDefault();
 
     const data = {
       token,
@@ -40,7 +40,6 @@ export default function SDashboard() {
       toast.error("Internal Server Error");
     }
   };
-   handleSubmit();
   const [slideIndex, setSlideIndex] = useState(0);
   const slidesRef = useRef(null);
   const totalSlides = 5;

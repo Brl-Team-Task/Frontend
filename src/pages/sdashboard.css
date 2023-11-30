@@ -233,6 +233,12 @@ section img {
   text-align: center;
 }
 
+button{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 /* ---------------------resoponsie-------------------------- */
 @media (max-width: 950px) {
   section {
