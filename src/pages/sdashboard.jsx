@@ -18,7 +18,7 @@ export default function SDashboard() {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+    // e.preventDefault();
 
     const data = {
       token,
@@ -40,6 +40,7 @@ export default function SDashboard() {
       toast.error("Internal Server Error");
     }
   };
+   handleSubmit();
   const [slideIndex, setSlideIndex] = useState(0);
   const slidesRef = useRef(null);
   const totalSlides = 5;
@@ -462,7 +463,7 @@ export default function SDashboard() {
               <p>Attendance Percentage of {data.name} ({data.section})</p>
             </div>
             <div>
-              <Graph data={data} />
+              <Graph data={data}/>
             </div>
           </div>
           <div className="carding">
@@ -474,6 +475,7 @@ export default function SDashboard() {
         </div>
       </div>
       <ToastContainer />
+     
     </>
   );
 }

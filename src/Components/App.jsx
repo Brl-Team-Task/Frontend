@@ -5,7 +5,7 @@ import Verify from "../pages/Verify";
 import Forgot from "../pages/Forgot";
 import PassConfirm from "../pages//PassConfirm";
 import SDashboard from "../pages/sdashboard";
-
+import YourComponent from "../pages/fdashboard"
 function App() {
   return (
     <BrowserRouter>
@@ -15,6 +15,7 @@ function App() {
         <Route path="/Forgot" element={<Forgot />} />
         <Route path="/PassConfirm" element={<PassConfirm />} />
         <Route path="/sdashboard" element={<SDashboard />} />
+        <Route path="/fdashboard" element={<YourComponent />} />
       </Routes>
     </BrowserRouter>
   );
