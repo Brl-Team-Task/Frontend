@@ -1,33 +1,41 @@
-.dropdown{
-background-color:#00A7F4;
-width: fit-content;
-margin-left: 2vw;
-margin-top: 1vw;
-padding: 0.3vw;
-border-radius: 8px;
-font-weight: bold;
-}
-.head{
-    font-size: 1.5vw;
-    margin-left: 2vw;
-    text-decoration: underline;
+.dropdown {
+  background-color: #00a7f4;
+  width: fit-content;
+  margin-left: 2em;
+  margin-top: 1em;
+  padding: 0.3vw;
+  border-radius: 8px;
+  font-weight: bold;
+  position: absolute;
 }
 
-img{
-     height: 80vh;
-     width: 70vw;
-     margin-left:15vw;
+.time {
+  margin: 0 3em;
 }
 
-option{
+.head {
+  font-size: 1.5vw;
+  text-align: center;
+}
+
+.download button{
+  background-color: #00a7f4;
   font-size: 1vw;
+  padding: 0.3vw;
+  width: 16rem;
+  border-radius: 8px;
+  border: none;
+  float: right;
+  margin: 0 2em 1em 0;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 800;
 }
-button{
-    background-color:#00A7F4;
-    font-weight: bold; 
-    font-size: 1vw;
-    padding: 0.3vw;
-    border-radius: 8px;
-    border: none;
-    margin-left: 80vw;
+
+.content {
+  height: fit-content;
+}
+
+#tt {
+  border-radius: 6px;
 }
