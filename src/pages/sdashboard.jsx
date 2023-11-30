@@ -4,10 +4,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState, useRef, useEffect } from "react";
 import "./sdashboard.css";
-import userImg from "../assets/AKGEC.png";
 import clgImg from "../assets/AKGEC.png";
-import Graph from "../Components/graph";
-import Card from "../Components/card";
+import Attendance from "../Components/attendance";
 
 export default function SDashboard() {
   const token = localStorage.getItem("Token");
@@ -25,11 +23,15 @@ export default function SDashboard() {
     };
 
     try {
-      const response = await axios.post(
-        "https://erp-backend-mqly.onrender.com/api/attendance/",
-        { headers, data }
+      const response = await axios.get(
+        "https://erp-backend-mqly.onrender.com/api/attendance/", {
+          headers:{
+            Authorization : `Bearer ${token}`
+          }
+        }
       );
       setData(response.data);
+      console.log(response.data);
 
       if (response.data.status === 201) {
         toast.success("Attendance submitted successfully");
@@ -75,6 +77,34 @@ export default function SDashboard() {
     const smallUserContainer = document.querySelector(".small-user-container");
     smallUserContainer.classList.toggle("active");
   };
+
+  useEffect(() => {
+    if (window.location.pathname === "/sdashboard") {
+      handleSubmit();
+    }
+  }, []);
+
+  const ActiveLinkContext = React.createContext();
+  const [activeLink, setActiveLink] = useState('Home');
+  const Content = () => {
+    const activeLink = React.useContext(ActiveLinkContext);
+  
+    switch (activeLink) {
+      case 'Home':
+        return <HomeContent />;
+      case 'Work':
+        return <WorkContent />;
+      case 'About':
+        return <AboutContent />;
+      default:
+        return null;
+    }
+  };
+  // Handle link clicks
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+  };
+
   return (
     <>
       <div>
@@ -113,10 +143,10 @@ export default function SDashboard() {
             <p id="home">Home</p>
           </div>
           <div className="right-nav">
-            <p>Palak Verma</p>
+            <p>{data.name}</p>
             <img
               className="user-img"
-              src={userImg}
+              src={data.profile_url}
               alt=""
               onClick={toggleSmallUser}
             />
@@ -455,24 +485,7 @@ export default function SDashboard() {
           </button>
         </div>
       </div>
-      <div className="graph">
-        <div className="disc">
-          <div className="graph-section">
-            <div>
-              <p>Attendance Percentage of {data.name} ({data.section})</p>
-            </div>
-            <div>
-              <Graph data={data}/>
-            </div>
-          </div>
-          <div className="carding">
-            <div className="total">Total Lectures : {data.total_classes}</div>
-            <div className="total">Percentage : {(data.present * 100 )/ data.total_classes}</div>
-            <Card prop="Total Presents" data={data.present} color="#009BE3"/>
-            <Card prop="Total Absents" data={data.absent} color="#DC3C3C"/>
-          </div>
-        </div>
-      </div>
+      < Attendance prop={data}/>
       <ToastContainer />
      
     </>

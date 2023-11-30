@@ -1,9 +1,9 @@
 import React from "react";
-import { PieChart, Pie, Tooltip } from "recharts";
+import { PieChart, Pie, Tooltip, FunnelChart } from "recharts";
 
-export default function Graph({ data }) {
+export default function Graph({ data }){
   const processedData = [];
-  
+
   for (const subjectTeacher in data.data) {
     const [subject, teacher] = subjectTeacher.split(", ");
     let presentCount = 0;
@@ -22,7 +22,9 @@ export default function Graph({ data }) {
       percentage: (presentCount * 100) / (presentCount + absentCount),
     });
   }
+
   return (
+    <div style={{ width: "100%", height: "100%" }}>
       <PieChart width={400} height={350}>
         <Pie
           dataKey="percentage"
@@ -36,5 +38,6 @@ export default function Graph({ data }) {
         />
         <Tooltip />
       </PieChart>
+    </div>
   );
-}
+};
