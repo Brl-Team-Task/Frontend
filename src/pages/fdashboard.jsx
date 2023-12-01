@@ -36,8 +36,9 @@ function YourComponent() {
   return (
     <>
       <main className="wrapper">
+
           <div className="user-info-div">
-            <img src="{dataa.profile_photo.url}" alt="user_pic"></img>
+            <img src={dataa.profile_photo_url} alt="user_pic"/>
           </div>
           <div className="faculty-container">
             <h1>Faculty profile :</h1>
