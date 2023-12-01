@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import  "./fdashboard.css"
+
 
 function YourComponent() {
   const token = localStorage.getItem("Token");
@@ -34,7 +36,9 @@ function YourComponent() {
   return (
     <>
       <main className="wrapper">
-          <div className="user-info-div"></div>
+          <div className="user-info-div">
+            <img src="{dataa.profile_photo.url}" alt="user_pic"></img>
+          </div>
           <div className="faculty-container">
             <h1>Faculty profile :</h1>
               <div className="faculty-data-container">
