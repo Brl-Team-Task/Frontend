@@ -85,9 +85,6 @@ export default function SDashboard() {
     }
   }, []);
 
-  const logout {
-    nevigate("/");
-  }
 
   const ActiveLinkContext = React.createContext();
   const [activeLink, setActiveLink] = useState("Home");
