@@ -5,6 +5,7 @@ import Verify from "../pages/Verify";
 import Forgot from "../pages/Forgot";
 import PassConfirm from "../pages//PassConfirm";
 import SDashboard from "../pages/sdashboard";
+import Feedback from "../pages/Feedback";
 import ChangePassword from "../pages/changePassword";
 import FDashboard from "../pages/fdashboard";
 

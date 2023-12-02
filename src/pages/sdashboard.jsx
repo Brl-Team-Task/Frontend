@@ -4,23 +4,31 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState, useRef, useEffect } from "react";
 import "./sdashboard.css";
-import clgImg from "../assets/AKGEC.png";
+import { useNavigate } from "react-router";
 import Attendance from "../Components/attendance";
 
 export default function SDashboard() {
   const token = localStorage.getItem("Token");
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const logout = (e) => {
+    localStorage.clear();
+    navigate("/");
+  };
+
+  const changePasswrod = async() => {
+    navigate("/changePassword");
+  };
 
   const handleSubmit = async () => {
     try {
       const response = await axios.get(
-        "https://erp-backend-mqly.onrender.com/api/attendance/", {
-          headers:{
-            Authorization : `Bearer ${token}`
-          }
+        "https://erp-backend-mqly.onrender.com/api/attendance/",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
       setData(response.data);
@@ -28,7 +36,7 @@ export default function SDashboard() {
       if (response.data.status === 201) {
         toast.success("Attendance submitted successfully");
       } else {
-        toast.error("Failed to submit attendance. Please try again.");
+        toast.error("Failed to submit data. Please try again.");
       }
     } catch (error) {
       toast.error("Internal Server Error");
@@ -76,6 +84,26 @@ export default function SDashboard() {
     }
   }, []);
 
+  const ActiveLinkContext = React.createContext();
+  const [activeLink, setActiveLink] = useState("Home");
+  const Content = () => {
+    const activeLink = React.useContext(ActiveLinkContext);
+
+    switch (activeLink) {
+      case "Home":
+        return <HomeContent />;
+      case "Work":
+        return <WorkContent />;
+      case "About":
+        return <AboutContent />;
+      default:
+        return null;
+    }
+  };
+  // Handle link clicks
+  const handleLinkClick = (link) => {
+    setActiveLink(link);
+  };
 
   return (
     <>
@@ -209,8 +237,7 @@ export default function SDashboard() {
               </a>
             </div>
             <div className="lower-icons">
-              <a href="#">
-                {" "}
+              <button>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="41"
@@ -237,8 +264,22 @@ export default function SDashboard() {
                     fill="white"
                   />
                 </svg>
-              </a>
-              <a href="#">
+              </button>
+              <button onClick={changePasswrod}>
+                <svg
+                  width="42"
+                  height="42"
+                  viewBox="0 0 42 42"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M30.8155 14.5707H29.1071V11.154C29.1071 6.43903 25.2805 2.61237 20.5655 2.61237C15.8505 2.61237 12.0238 6.43903 12.0238 11.154V14.5707H10.3155C8.4363 14.5707 6.8988 16.1082 6.8988 17.9874V35.0707C6.8988 36.9499 8.4363 38.4874 10.3155 38.4874H30.8155C32.6946 38.4874 34.2321 36.9499 34.2321 35.0707V17.9874C34.2321 16.1082 32.6946 14.5707 30.8155 14.5707ZM15.4405 11.154C15.4405 8.3182 17.7296 6.02903 20.5655 6.02903C23.4013 6.02903 25.6905 8.3182 25.6905 11.154V14.5707H15.4405V11.154ZM30.8155 35.0707H10.3155V17.9874H30.8155V35.0707ZM20.5655 29.9457C22.4446 29.9457 23.9821 28.4082 23.9821 26.529C23.9821 24.6499 22.4446 23.1124 20.5655 23.1124C18.6863 23.1124 17.1488 24.6499 17.1488 26.529C17.1488 28.4082 18.6863 29.9457 20.5655 29.9457Z"
+                    fill="white"
+                  />
+                </svg>
+              </button>
+              <button onClick={logout}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="41"
@@ -253,7 +294,7 @@ export default function SDashboard() {
                     fill="white"
                   />
                 </svg>
-              </a>
+              </button>
             </div>
           </div>
         </section>
@@ -365,7 +406,6 @@ export default function SDashboard() {
               </a>{" "}
             </p>
             <p>
-              Logout{" "}
               <a href="#">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -457,11 +497,10 @@ export default function SDashboard() {
           </button>
         </div>
       </div>
-       <div className="datato">
-       {data ? <Attendance prop={data}/> : "Nothing to show here"}
-       </div>
+      <div className="datato">
+        {data ? <Attendance prop={data} /> : "Nothing to show here"}
+      </div>
       <ToastContainer />
-     
     </>
   );
-}};
+}
