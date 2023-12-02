@@ -32,6 +32,7 @@ main{
   .user-info-div h2{
     font-size: 1.7em;
     text-transform: uppercase;
+    text-align: center;
   }
   .user-info-div p{
     font-size: 1.3em;
@@ -90,4 +91,155 @@ main{
   }
   .user-info-vlaue strong{
     float: right;
+  }
+
+  /* ===========================================responsive========================================== */
+@media (max-width: 950px){
+    main{
+      top: 35%;
+      gap: 0em;
+    }
+     .user-info-div img{
+      height: 5em;
+      width: 5em;
+     }
+     .user-info-div h2{
+      font-size: 1.3em;
+     }
+     .user-info-div p{
+      font-size: 1em;
+      text-align: center;
+     }
+     .user-info-div{
+      width: 20%;
+      padding: 1em;
+      gap: 1.4rem;
+     }
+     .user-info-value{
+      font-size: 1em;
+      gap: 1.5em;
+     }
+     .faculty-container{
+      height: 92%;
+     }
+     .faculty-container h1{
+      font-size: 1.7em;
+     }
+}
+/* -----------------------------max 750px---------------------------------------------- */
+@media (max-width: 750px){
+    main{
+        top: 30%;
+        height: 70%;
+      }
+      .user-info-div{
+        width: 25%;
+        height: 40%;
+        gap: 1em;
+      }
+      .user-info-value strong{
+        text-align: right;
+      }
+}
+
+/* ----------------------------max 600px--------------------------------------------- */
+@media (max-width: 600px){
+    main{
+      top: 25%;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    .user-info-div img{
+      height: 4.5em;
+      width: 4.5em;
+      margin-bottom: 1em;
+    }
+    .user-info-div{
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 0em;
+      height: 30%;
+      width: 50%;
+    }
+    .user-info-div h2{
+      /* width: 100%; */
+      font-size: 1em;
+    }
+    .user-info-div p{
+      text-align: left;
+      font-size: 0.8em;
+    }
+    .user-info-value strong{
+      text-align: right;
+    }
+    .faculty-data-container{
+      font-size: 0.8em;
+    }
+    .faculty-container h1{
+      font-size: 1.2em;
+    }
+    .faculty-container{
+      margin-left: 0;
+      width: 80%;
+    }
+}
+
+/* /-----------------------max 500px-------------------------------------------------- */
+@media (max-width: 500px){ 
+    .user-info-div {
+      width: 60%;
+      height: 23%;
+      grid-template-columns: 1fr 1.5fr;
+      padding: 1em;
+    }
+    .user-info-div h2{
+      font-size: 1.1em;
+    }
+    .user-info-div img{
+      height: 4em;
+      width: 4em;
+    }
+    .faculty-data-container{
+      display: flex;
+      flex-direction: column;
+    } 
+    .faculty-data-container div{
+      gap: 0.5em;
+    }
+    .user-info-value strong{
+      text-align: left;
+    }
+}    
+/* -----------------------max 400px----------------------------------------- */
+@media (max-width:400px) {
+    .user-info-div{
+      width: 70%;
+    }
+    .user-info-div h2{
+      font-size: 1em;
+    }
+    .user-info-div p{
+      font-size: 0.6em;
+    }
+    .faculty-container{
+        padding: 1em;
+      }
+    .faculty-container h1{
+      font-size: 1em;
+    }
+  }
+
+/* --------------------------------------max 300px ---------------------------------------- */
+@media (max-width:300px) {
+    main{
+      top: 23%;
+    }
+    .faculty-data-container div{
+      gap: 0.5em;
+    }
+    .faculty-container{
+      padding: 1em 0.5em;
+      width: 85%;
+    }
   }
