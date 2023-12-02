@@ -10,9 +10,3 @@
 .card p{
     font-size: 2rem;
 }
-
-@media only screen and (max-width: 1050px){
-    :root{
-        font-size: 8px !important;
-    }
-}
