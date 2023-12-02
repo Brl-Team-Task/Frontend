@@ -18,10 +18,7 @@ export default function SDashboard() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const data = {
-      token,
-    };
-
+  const handleSubmit = async () => {
     try {
       const response = await axios.get(
         "https://erp-backend-mqly.onrender.com/api/attendance/", {
@@ -31,7 +28,6 @@ export default function SDashboard() {
         }
       );
       setData(response.data);
-      console.log(response.data);
 
       if (response.data.status === 201) {
         toast.success("Attendance submitted successfully");
@@ -485,9 +481,11 @@ export default function SDashboard() {
           </button>
         </div>
       </div>
-      < Attendance prop={data}/>
+       <div className="datato">
+       {data ? <Attendance prop={data}/> : "Nothing to show here"}
+       </div>
       <ToastContainer />
      
     </>
   );
-}
+}};
