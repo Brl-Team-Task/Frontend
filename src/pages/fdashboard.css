@@ -1,9 +1,93 @@
-h1{
-color: #015AAD;
-font-family: Inter;
-font-size: 32px;
-font-style: normal;
-font-weight: 700;
-line-height: normal;
-text-transform: uppercase;
+body{
+    background-color: #00000032;
 }
+main{
+    position: absolute;
+    display: flex;
+    
+    /* justify-content: space-evenly; */
+    justify-content: center;
+    /* align-items: center; */
+    gap: 1rem;
+    top: 38%;
+    width: 100%;
+    /* width: calc(100vw  - 10rem); */
+    height: 60%;
+    /* float: left; */
+   }
+  .user-info-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #fff;
+    height: 55%;
+    width: 18%;
+    max-width: 300px;
+    max-height: 350px;
+    padding: 3em 0.5em 3em 0.5em;
+    gap: 1rem;
+  }
+  .user-info-div h2{
+    font-size: 1.7em;
+    text-transform: uppercase;
+  }
+  .user-info-div p{
+    font-size: 1.3em;
+    font-weight: 600;
+  }
+  .user-info-div img{
+    height: 7em;
+    width: 7em;
+    border-radius: 50%;
+  }
+  .faculty-container{
+    display: flex;
+    flex-direction: column;
+    float: left;
+    border-radius: 12px;
+    background-color: #fff;
+    width: 67%;
+    height: 90%;
+    /* max-width: 1000px; */
+    max-height: 700px;
+    padding:1rem 2rem;
+    margin-left: 1.5rem;
+    /* margin-right: 1rem; */
+    gap: 1.5rem;
+  }
+  .faculty-container h1{      
+    color: #015AAD;
+    font-size:2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    float: left;
+  }
+  .faculty-data-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    flex-direction: column;
+    float: left;
+    gap: 1.5rem;
+    /* flex-wrap: wrap; */
+  }
+  .faculty-data-container div{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    
+  }
+  .user-info-value{
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* column-gap: 1rem; */
+    /* justify-content: space-around; */
+    
+    float: left;
+    font-size: 1.1em;
+  }
+  .user-info-vlaue strong{
+    float: right;
+  }
