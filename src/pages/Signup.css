@@ -187,33 +187,16 @@ button:focus {
   .SignLayout h3 {
     font-size: 1.4rem;
   }
-  .SignLayout input,
-  .SignLayout button {
-    width: 9.5rem;
-  }
-  .SignLayout i {
-    left: 7rem;
-  }
+  
   .header p {
     margin-top: 1rem;
   }
 }
 @media (max-width: 235px) {
-  .SignLayout {
-    width: 10rem;
-    height: 22rem;
-  }
   .SignLayout h3 {
     font-size: 1.2rem;
   }
-  .SignLayout input,
-  .SignLayout button {
-    width: 7rem;
-    font-size: 0.9rem;
-  }
-  .SignLayout i {
-    left: 5rem;
-  }
+  
   .SignLayout p {
     font-size: 0.8rem;
     margin-top: 0.4rem;
@@ -221,28 +204,16 @@ button:focus {
 }
 @media (max-width: 170px) {
   .SignLayout {
-    width: 5.5rem;
-    height: 15rem;
-    padding: 1rem;
-    border-radius: 1.5rem;
+    margin: 2em 2em;
   }
   .header p,
   .SignLayout p {
     font-size: 0.58rem;
   }
-  .SignLayout input,
-  .SignLayout button {
-    width: 4rem;
-    font-size: 0.7rem;
-    padding: 0.4rem;
-    height: 1.5rem;
-  }
+  
   ::placeholder,
   .SignLayout label {
     font-size: 0.6rem;
     margin-top: 1rem;
-  }
-  .SignLayout i {
-    display: none;
   }
 }
