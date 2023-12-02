@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState, useRef, useEffect } from "react";
 import "./sdashboard.css";
+import clgImg from "../assets/AKGEC.png";
 import { useNavigate } from "react-router";
 import Attendance from "../Components/attendance";
 
@@ -83,6 +84,7 @@ export default function SDashboard() {
       handleSubmit();
     }
   }, []);
+
 
   const ActiveLinkContext = React.createContext();
   const [activeLink, setActiveLink] = useState("Home");

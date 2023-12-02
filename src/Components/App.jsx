@@ -7,7 +7,6 @@ import PassConfirm from "../pages//PassConfirm";
 import SDashboard from "../pages/sdashboard";
 import Feedback from "../pages/Feedback";
 import ChangePassword from "../pages/changePassword";
-import FDashboard from "../pages/fdashboard";
 
 
 function App() {
@@ -20,7 +19,7 @@ function App() {
         <Route path="/PassConfirm" element={<PassConfirm />} />
         <Route path="/changePassword" element={<ChangePassword />} />
         <Route path="/sdashboard" element={<SDashboard />} />
-        <Route path="/fdashboard" element={<FDashboard />} />
+        <Route path="/Feedback" element={<Feedback />} />
       </Routes>
     </BrowserRouter>
   );
