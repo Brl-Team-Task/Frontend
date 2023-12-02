@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import  "./fdashboard.css"
-
+import  "./fdashboard.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function YourComponent() {
   const token = localStorage.getItem("Token");
@@ -19,9 +20,7 @@ function YourComponent() {
         }
       );
       console.log(response.data.faculty_data);
-      setDataa(response.data.faculty_data);
-      console.log(dataa);
-   
+      setDataa(response.data.faculty_data); 
      
     } catch (error) {
       console.log("Internal Server Error",error);
@@ -39,8 +38,7 @@ function YourComponent() {
 
           <div className="user-info-div">
             <img src={dataa.profile_photo_url} alt="user_pic"/>
-            <h2>Palak Verma</h2>
-            <p>11 Sep 2004</p>
+            <h2>{dataa.first_name||"N/A"} {dataa.last_name||"N/A"}</h2>
           </div>
           <div className="faculty-container">
             <h1>Faculty profile :</h1>

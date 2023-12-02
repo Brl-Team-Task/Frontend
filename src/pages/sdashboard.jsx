@@ -11,20 +11,14 @@ export default function SDashboard() {
   const token = localStorage.getItem("Token");
   const [data, setData] = useState([]);
 
-  const headers = {
-    Authorization: `Bearer ${token}`,
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
   const handleSubmit = async () => {
     try {
       const response = await axios.get(
-        "https://erp-backend-mqly.onrender.com/api/attendance/", {
-          headers:{
-            Authorization : `Bearer ${token}`
-          }
+        "https://erp-backend-mqly.onrender.com/api/attendance/",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
       );
       setData(response.data);
@@ -80,17 +74,21 @@ export default function SDashboard() {
     }
   }, []);
 
+  const logout {
+    nevigate("/");
+  }
+
   const ActiveLinkContext = React.createContext();
-  const [activeLink, setActiveLink] = useState('Home');
+  const [activeLink, setActiveLink] = useState("Home");
   const Content = () => {
     const activeLink = React.useContext(ActiveLinkContext);
-  
+
     switch (activeLink) {
-      case 'Home':
+      case "Home":
         return <HomeContent />;
-      case 'Work':
+      case "Work":
         return <WorkContent />;
-      case 'About':
+      case "About":
         return <AboutContent />;
       default:
         return null;
@@ -481,11 +479,10 @@ export default function SDashboard() {
           </button>
         </div>
       </div>
-       <div className="datato">
-       {data ? <Attendance prop={data}/> : "Nothing to show here"}
-       </div>
+      <div className="datato">
+        {data ? <Attendance prop={data} /> : "Nothing to show here"}
+      </div>
       <ToastContainer />
-     
     </>
   );
-}};
+}
