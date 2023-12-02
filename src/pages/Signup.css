@@ -51,7 +51,7 @@
 
 .SignLayout {
   background-color: #5882c17d;
-  height: 27rem;
+  height: fit-content;
   width: 27rem;
   align-self: center;
   display: flex;
@@ -143,7 +143,6 @@ button:focus {
     font-size: 1.8rem;
   }
   .header img {
-    height: 6rem;
     width: 5.5rem;
   }
 }
@@ -152,7 +151,6 @@ button:focus {
     font-size: 1.3rem;
   }
   .header img {
-    height: 4.5rem;
     width: 4rem;
   }
 }
@@ -161,23 +159,22 @@ button:focus {
     font-size: 0.8rem;
   }
   .header img {
-    height: 3.5rem;
     width: 3rem;
   }
   .SignLayout {
-    width: 20rem;
-    height: 25rem;
+    width: 25rem;
     margin-top: 3rem;
   }
   .SignLayout input,
   .SignLayout button {
-    width: 15rem;
+    width: 20rem;
   }
   .SignLayout label {
+    margin-top: 1rem;
     font-size: 0.8rem;
   }
   .SignLayout i {
-    left: 13rem;
+    left: 18rem;
   }
 }
 @media (max-width: 350px) {
@@ -185,8 +182,6 @@ button:focus {
     flex-direction: column;
   }
   .SignLayout {
-    width: 14rem;
-    height: 22rem;
     padding: 2rem;
   }
   .SignLayout h3 {

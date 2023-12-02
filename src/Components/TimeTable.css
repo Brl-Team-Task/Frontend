@@ -1,0 +1,41 @@
+.dropdown {
+  background-color: #00a7f4;
+  width: fit-content;
+  margin-left: 2em;
+  margin-top: 1em;
+  padding: 0.3vw;
+  border-radius: 8px;
+  font-weight: bold;
+  position: absolute;
+}
+
+.time {
+  margin: 0 3em;
+}
+
+.head {
+  font-size: 1.5vw;
+  text-align: center;
+}
+
+.download button{
+  background-color: #00a7f4;
+  font-size: 1vw;
+  padding: 0.3vw;
+  width: 16rem;
+  border-radius: 8px;
+  border: none;
+  float: right;
+  margin: 0 2em 1em 0;
+  cursor: pointer;
+  text-align: center;
+  font-weight: 800;
+}
+
+.content {
+  height: fit-content;
+}
+
+#tt {
+  border-radius: 6px;
+}

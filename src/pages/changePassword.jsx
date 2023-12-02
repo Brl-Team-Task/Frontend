@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
+import "./PassConfirm.css";
+import Desktop from "../assets/Desktop.png";
+import { useState } from "react";
 import axios from "axios";
 import { useNavigate, Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Desktop from "../assets/Desktop.png";
-import "./PassConfirm.css";
 
-const PassConfirm = () => {
+export default function ChangePassword() {
   const [password, setpassword] = useState("");
   const [confirm_password, setconfirm_password] = useState("");
   const [showpassword, setShowpassword] = useState(false);
@@ -44,11 +45,10 @@ const PassConfirm = () => {
 
     try {
       const response = await axios.patch(
-        "https://erp-backend-mqly.onrender.com/api/password/reset/",
-        {
-          password: password,
-          confirm_password: confirm_password,
-          token: token,
+        "https://erp-backend-mqly.onrender.com/api/changepassword/",{
+            confirm_password : confirm_password,
+            password : password,
+            token
         }
       );
 
@@ -96,9 +96,6 @@ const PassConfirm = () => {
                   onClick={handleShowpassword}
                 ></i>
               )}
-              {/* <button type="button" onClick={handleShowpassword}>
-          {showpassword ? "Hide New Password" : "Show New Password"}
-        </button> */}
               <input
                 type={showconfirm_password ? "text" : "password"}
                 value={confirm_password}
@@ -106,11 +103,6 @@ const PassConfirm = () => {
                 required
                 placeholder="Confirm Password"
               />
-              {/* <button type="button" onClick={handleShowconfirm_password}>
-          {showconfirm_password
-            ? "Hide Confirm Password"
-            : "Show Confirm Password"}
-        </button> */}
               {showconfirm_password ? (
                 <i
                   className="fa fa-regular fa-eye"
@@ -127,13 +119,11 @@ const PassConfirm = () => {
                 Reset Password
               </button>
             </form>
-            <Link to={"/"}>Back to Sign in</Link>
+            <Link to={"/sdashboard"}>Back to Dashboard</Link>
           </div>
           <ToastContainer />
-        </div>{" "}
+        </div>
       </div>
     </>
   );
-};
-
-export default PassConfirm;
+}

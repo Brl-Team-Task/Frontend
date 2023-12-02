@@ -1,0 +1,38 @@
+.disc {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1.5em;
+}
+
+.graph-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 2em;
+}
+
+.graph-section p {
+  font-size: 1.5rem;
+}
+
+.carding {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6em;
+  margin: 0 2rem ;
+}
+
+.total {
+  font-size: 2rem;
+  text-align: center;
+}
+
+@media only screen and (max-width: 775px){
+    .disc {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+}
