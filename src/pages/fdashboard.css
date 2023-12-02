@@ -1,7 +1,7 @@
 body{
     background-color: #00000032;
 }
-main{
+.main{
     position: absolute;
     display: flex;
     
@@ -95,7 +95,7 @@ main{
 
   /* ===========================================responsive========================================== */
 @media (max-width: 950px){
-    main{
+    .main{
       top: 35%;
       gap: 0em;
     }
@@ -128,7 +128,7 @@ main{
 }
 /* -----------------------------max 750px---------------------------------------------- */
 @media (max-width: 750px){
-    main{
+    .main{
         top: 30%;
         height: 70%;
       }
@@ -144,7 +144,7 @@ main{
 
 /* ----------------------------max 600px--------------------------------------------- */
 @media (max-width: 600px){
-    main{
+    .main{
       top: 25%;
       flex-direction: column;
       align-items: center;
@@ -232,7 +232,7 @@ main{
 
 /* --------------------------------------max 300px ---------------------------------------- */
 @media (max-width:300px) {
-    main{
+    .main{
       top: 23%;
     }
     .faculty-data-container div{

@@ -35,7 +35,7 @@ function YourComponent() {
     
   return (
     <>
-      <main className="wrapper">
+      <main className="main">
 
           <div className="user-info-div">
             <img src={dataa.profile_photo_url} alt="user_pic"/>
