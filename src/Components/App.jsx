@@ -5,7 +5,9 @@ import Verify from "../pages/Verify";
 import Forgot from "../pages/Forgot";
 import PassConfirm from "../pages//PassConfirm";
 import SDashboard from "../pages/sdashboard";
+import Feedback from "../pages/Feedback";
 import ChangePassword from "../pages/changePassword";
+
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
         <Route path="/PassConfirm" element={<PassConfirm />} />
         <Route path="/changePassword" element={<ChangePassword />} />
         <Route path="/sdashboard" element={<SDashboard />} />
+        <Route path="/Feedback" element={<Feedback />} />
       </Routes>
     </BrowserRouter>
   );
