@@ -50,6 +50,7 @@ const Forgot = () => {
           <div className="Forgot">
             <h1>Forgot Password</h1>
             <form onSubmit={handleForgotPassword}>
+              <label className="lebel">Enter your registered Email</label>
               <input
                 type="email"
                 value={email}
