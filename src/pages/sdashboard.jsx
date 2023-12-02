@@ -11,10 +11,6 @@ export default function SDashboard() {
   const token = localStorage.getItem("Token");
   const [data, setData] = useState([]);
 
-  const headers = {
-    Authorization: `Bearer ${token}`,
-  };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -80,26 +76,6 @@ export default function SDashboard() {
     }
   }, []);
 
-  const ActiveLinkContext = React.createContext();
-  const [activeLink, setActiveLink] = useState('Home');
-  const Content = () => {
-    const activeLink = React.useContext(ActiveLinkContext);
-  
-    switch (activeLink) {
-      case 'Home':
-        return <HomeContent />;
-      case 'Work':
-        return <WorkContent />;
-      case 'About':
-        return <AboutContent />;
-      default:
-        return null;
-    }
-  };
-  // Handle link clicks
-  const handleLinkClick = (link) => {
-    setActiveLink(link);
-  };
 
   return (
     <>

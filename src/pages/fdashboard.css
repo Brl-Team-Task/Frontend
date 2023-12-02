@@ -4,16 +4,11 @@ body{
 .main{
     position: absolute;
     display: flex;
-    
-    /* justify-content: space-evenly; */
     justify-content: center;
-    /* align-items: center; */
     gap: 1rem;
     top: 38%;
     width: 100%;
-    /* width: calc(100vw  - 10rem); */
     height: 60%;
-    /* float: left; */
    }
   .user-info-div{
     display: flex;

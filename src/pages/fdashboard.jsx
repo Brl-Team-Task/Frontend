@@ -3,7 +3,7 @@ import axios from "axios";
 import  "./fdashboard.css"
 
 
-function YourComponent() {
+function FDashboard() {
   const token = localStorage.getItem("Token");
   const [dataa, setDataa] = useState([]);
 
@@ -39,8 +39,7 @@ function YourComponent() {
 
           <div className="user-info-div">
             <img src={dataa.profile_photo_url} alt="user_pic"/>
-            <h2>Palak Verma</h2>
-            <p>11 Sep 2004</p>
+            <h2>{dataa.first_name||"N/A"} {dataa.last_name||"N/A"}</h2>
           </div>
           <div className="faculty-container">
             <h1>Faculty profile :</h1>
@@ -70,4 +69,4 @@ function YourComponent() {
   );
 }
 
-export default YourComponent;
+export default FDashboard;
