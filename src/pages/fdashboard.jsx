@@ -39,10 +39,40 @@ function YourComponent() {
 
           <div className="user-info-div">
             <img src={dataa.profile_photo_url} alt="user_pic"/>
+            <h2>Palak Verma</h2>
+            <p>11 Sep 2004</p>
           </div>
           <div className="faculty-container">
             <h1>Faculty profile :</h1>
-              <div className="faculty-data-container">
+            <div className="faculty-data-container">
+                  <div>
+                  <p className='user-info-value'>FIRST NAME <strong>{dataa.first_name||"N/A"}</strong></p>
+                  <p className='user-info-value'>LAST NAME <strong>{dataa.last_name||"N/A"}</strong></p>
+                  <p className='user-info-value'>USER ID <strong>{dataa.user_id||"N/A"}</strong></p>
+                  <p className='user-info-value'>EMAIL <strong>{dataa.email||"N/A"}</strong></p>
+                  <p className='user-info-value'>PHONE NO. <strong>{dataa.phone_number||"N/A"}</strong></p>
+                  <p className='user-info-value'>ROLE <strong>{dataa.role||"N/A"}</strong></p>
+                  <p className='user-info-value'>POST <strong>{dataa.Post||"N/A"}</strong></p>
+                  <p className='user-info-value'>DEPARTMENT <strong>{dataa.Department||"N/A"}</strong></p>
+                  </div>
+                  <div>
+                  <p className='user-info-value'>AADHAR NO. <strong>{dataa.aadhar||"N/A"}</strong></p>
+                  <p className='user-info-value'>GENDER <strong>{dataa.gender||"N/A"}</strong></p>
+                  <p className='user-info-value'>ADDRESS <strong>{dataa.address||"N/A"}</strong></p>
+                  </div>
+                  
+              </div>
+          </div>
+
+      </main>
+      
+    </>
+  );
+}
+
+export default YourComponent;
+
+{/* <div className="faculty-data-container">
                   <p>FIRST NAME <strong>{dataa.first_name||"N/A"}</strong></p>
                   <p>LAST NAME <strong>{dataa.last_name||"N/A"}</strong></p>
                   <p>USER ID <strong>{dataa.user_id||"N/A"}</strong></p>
@@ -54,13 +84,4 @@ function YourComponent() {
                   <p>AADHAR NO. <strong>{dataa.aadhar||"N/A"}</strong></p>
                   <p>GENDER <strong>{dataa.gender||"N/A"}</strong></p>
                   <p>ADDRESS <strong>{dataa.address||"N/A"}</strong></p>
-              </div>
-          </div>
-
-      </main>
-      
-    </>
-  );
-}
-
-export default YourComponent;
+              </div> */}
