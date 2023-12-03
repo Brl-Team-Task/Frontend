@@ -7,6 +7,7 @@ import "./sdashboard.css";
 import clgImg from "../assets/AKGEC.png";
 import { useNavigate } from "react-router";
 import Attendance from "../Components/attendance";
+import Exam from "../Components/Exam"
 
 export default function SDashboard() {
   const token = localStorage.getItem("Token");
@@ -487,7 +488,9 @@ export default function SDashboard() {
       </div>
       <div className="datato">
         {data ? <Attendance prop={data} /> : "Nothing to show here"}
+        <Exam />
       </div>
+       
       <ToastContainer />
     </>
   );
