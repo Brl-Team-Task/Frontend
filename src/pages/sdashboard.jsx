@@ -8,6 +8,8 @@ import clgImg from "../assets/AKGEC.png";
 import { useNavigate } from "react-router";
 import Attendance from "../Components/attendance";
 import StudentComponent from "../Components/sprofile";
+import Timetable from "../Components/TimeTable";
+import Events from "../Components/Events";
 
 export default function SDashboard() {
   const token = localStorage.getItem("Token");
@@ -106,11 +108,39 @@ export default function SDashboard() {
   const handleLinkClick = (link) => {
     setActiveLink(link);
   };
-    const [showStudentComponent, setShowStudentComponent] = useState(false);
-    const handleProfileClick = () => {
-      setShowStudentComponent(!showStudentComponent);
-    };
+    // const [showStudentComponent, setShowStudentComponent] = useState(false);
+    // const handleProfileClick = () => {
+    //   setShowStudentComponent(!showStudentComponent);
+   // };
+  // const [showAttendance, setShowAttendance] = useState(true);
+  // const [showTimeTable, setShowTimeTable] = useState(false);
+  // const [showEvents, setShowEvents] = useState(false);
+  // const [showProfile, setShowProfile] = useState(false);
+  const [selectedComponent, setSelectedComponent] = useState('Attendance');
 
+  // const handleToggleClick = (component) => {
+  //   setShowAttendance(component === "Attendance");
+  //   setShowTimeTable(component === "TimeTable");
+  //   setShowEvents(component === "Events");
+  //   setShowProfile(component === "Profile");
+  // };
+  const handleToggleClick = (component) => {
+    setSelectedComponent(component);
+  };
+  const renderComponent = () => {
+    switch (selectedComponent) {
+      case 'Attendance':
+        return <Attendance  prop={data} />;
+      case 'TimeTable':
+        return <Timetable />;
+      case 'Events':
+        return <Events />;
+      case 'Profile':
+        return <StudentComponent />;
+      default:
+        return null;
+    }
+  };
   return (
     <>
       <div>
@@ -221,7 +251,7 @@ export default function SDashboard() {
                   />
                 </svg>
               </a>
-              <a href="#" onClick={handleProfileClick}>
+              <a href="#" onClick={() => handleToggleClick("Profile")}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="37"
@@ -421,10 +451,10 @@ export default function SDashboard() {
         <div className="toggling-bar">
           <ul>
             <li>
-              <a href="#">ATTENDENCE</a>
+              <a href="#" onClick={() => handleToggleClick("Attendance")}>ATTENDENCE</a>
             </li>
             <li>
-              <a href="#">TIME TABLE</a>
+              <a href="#" onClick={() => handleToggleClick("TimeTable")} >TIME TABLE</a>
             </li>
             <li>
               <a href="#">EXAMS</a>
@@ -433,7 +463,7 @@ export default function SDashboard() {
               <a href="#">PLACEMENT</a>
             </li>
             <li>
-              <a href="#">EVENTS</a>
+              <a href="#" onClick={() => handleToggleClick("Events")} >EVENTS</a>
             </li>
           </ul>
         </div>
@@ -491,10 +521,18 @@ export default function SDashboard() {
         </div>
       </div>
       <div className="datato">
-        {data ? <Attendance prop={data} /> : "Nothing to show here"}
-        {showStudentComponent && <StudentComponent />}
+        {/* { data ? <Attendance prop={data} /> : "Nothing to show here"} */}
+        {/* {showStudentComponent && <StudentComponent />} */}
+        {/* <StudentComponent /> */}
+        {/* <Timetable /> */}
+        {/* <Events /> */}
+        {/* {showAttendance && <Attendance  prop={data} />}
+        {showTimeTable && <Timetable />}
+        {showEvents && <Events />}
+        {showProfile && <StudentComponent />} */}
+        {renderComponent()}
       </div>
       <ToastContainer />
     </>
   );
-}
+};
