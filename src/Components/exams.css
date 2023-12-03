@@ -1,16 +1,28 @@
 .ue,.oe,.pe{
     font: inter;
-    font-size: 2vw;
+    font-size: 1.5vw;
      border-bottom: .2vw solid red;
     padding-bottom: 1vw;
     font-weight: bolder;
+    text-align: left;
+}
+.esec{
+    padding: 3vw;
 }
 tr{
     padding:1vw ;
+    border-bottom: .1vw solid grey;
 }
-td{
+.ue>td,.oe>td,.pe>td{
     font-size:1.5vw ;
-    font-weight: bold;
-    padding-left: 4vw;
+    font-weight: 200;
     padding-right: 9vw;
+    padding-bottom: 1vw;
+    border-bottom: 2px solid gray;
+
+}
+.dresult,.dadmitcard{
+    background-color: #00A7F4;
+    padding:0.17vw;
+    border-radius: 0.3vw;
 }
