@@ -111,22 +111,9 @@ export default function SDashboard() {
   const handleLinkClick = (link) => {
     setActiveLink(link);
   };
-    // const [showStudentComponent, setShowStudentComponent] = useState(false);
-    // const handleProfileClick = () => {
-    //   setShowStudentComponent(!showStudentComponent);
-   // };
-  // const [showAttendance, setShowAttendance] = useState(true);
-  // const [showTimeTable, setShowTimeTable] = useState(false);
-  // const [showEvents, setShowEvents] = useState(false);
-  // const [showProfile, setShowProfile] = useState(false);
+   
   const [selectedComponent, setSelectedComponent] = useState('Attendance');
 
-  // const handleToggleClick = (component) => {
-  //   setShowAttendance(component === "Attendance");
-  //   setShowTimeTable(component === "TimeTable");
-  //   setShowEvents(component === "Events");
-  //   setShowProfile(component === "Profile");
-  // };
   const handleToggleClick = (component) => {
     setSelectedComponent(component);
   };
@@ -140,6 +127,8 @@ export default function SDashboard() {
         return <Events />;
       case 'Profile':
         return <StudentComponent />;
+      case 'Exam':
+        return <Exam />;
       default:
         return null;
     }
