@@ -35,8 +35,10 @@ const Events = () => {
   };
 
   return (
-    <div>
-      <p className='heading'>Upcoming Events</p>
+    <div className='graph'>
+      <div className='inside'>
+        <div className='inside2'>
+        <p className='heading'>Upcoming Events</p>
       {loading && <p>Loading events...</p>}
       {error && <p>Error fetching events.</p>}
       {!loading && !error && (
@@ -55,7 +57,7 @@ const Events = () => {
                   <td>{item.event_name}</td>
                   <td>{item.date}</td>
                   <td className='poster' onClick={() => handlePosterClick(item.poster)}>
-                  <button>
+                  <button className='view'>
                     View Poster
                     </button>
                   </td>
@@ -74,6 +76,8 @@ const Events = () => {
           )}
         </div>
       )}
+        </div>
+      </div>
     </div>
   );
 };

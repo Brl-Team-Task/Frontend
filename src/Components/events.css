@@ -8,22 +8,36 @@
     font-weight: bolder;
     text-decoration: none;
 }
+
+.inside{
+    margin: 1em;
+}
+
+table{
+    border-collapse: collapse;
+}
+
 thead{
+    width: calc(100vw - 10rem);
     padding:1vw ;
 }
 th{
+    width: calc(100vw - 10rem);
     border-bottom: .2vw solid red;
     border-top: .2vw solid red;
-    padding: 0.6vw 12vw;
+    padding: 0.6vw 6vw;
     font-size: 1.25vw;
 }
 td{
     font-size:1vw ;
     font-weight: bold;
-    padding: 0.6vw 12vw;
+    padding: 0.6vw 6vw;
     border-bottom: 2px solid gray;
 }
-.poster>button{ 
+
+.view{
+    border-radius: 0.2rem;
+    padding: 0.3em 1em;
     background-color:#00A7F4;
     width: 10vw;
     border: none;
