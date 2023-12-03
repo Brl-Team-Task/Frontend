@@ -2,18 +2,14 @@ import React from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "./calender.css";
-import { useState } from "react";
+import Date from "./date";
 
 export default function Calender() {
-  const [date, setDate] = useState(new Date());
-
   return (
     <>
       <div className="calen">
-        <Calendar
-          onChange={setDate}
-          value={date}
-        />
+        <Date />
+        <Calendar />
       </div>
     </>
   );
