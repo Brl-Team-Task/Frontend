@@ -213,6 +213,9 @@ button{
 .datato{
   text-align: center;
 }
+#showCarsole{
+  display: none;
+}
 
 /* ---------------------resoponsie-------------------------- */
 @media (max-width: 950px) {
@@ -370,6 +373,12 @@ button{
 
 /* ==================================max 450 ================================ */
 @media (max-width: 450px) {
+  #showToggling{
+    display: none;
+  }
+  #showCarsole{
+    display: flex !important;
+  }
   nav {
     background-color: #015aad;
     width: 100%;
