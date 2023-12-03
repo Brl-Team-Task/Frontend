@@ -7,7 +7,10 @@ import "./sdashboard.css";
 import clgImg from "../assets/AKGEC.png";
 import { useNavigate } from "react-router";
 import Attendance from "../Components/attendance";
-import Exam from "../Components/Exam"
+import Timetable from "../Components/TimeTable";
+import Events from "../Components/Events";
+import StudentComponent from "../Components/sprofile";
+import Exam from "../Components/Exam";
 
 export default function SDashboard() {
   const token = localStorage.getItem("Token");
@@ -44,6 +47,7 @@ export default function SDashboard() {
       toast.error("Internal Server Error");
     }
   };
+  const [count, setCount] = useState(0);
   const [slideIndex, setSlideIndex] = useState(0);
   const slidesRef = useRef(null);
   const totalSlides = 5;
@@ -58,11 +62,15 @@ export default function SDashboard() {
   };
 
   const showNextSlide = () => {
+    console.log(count);
     setSlideIndex((prevIndex) => (prevIndex + 1) % totalSlides);
+      // console.log(count+1);
+      setCount((count + 1)%5);
   };
 
   const showPrevSlide = () => {
     setSlideIndex((prevIndex) => (prevIndex - 1 + totalSlides) % totalSlides);
+      setCount((count+5 - 1)%5);
   };
 
   const toggleSection = () => {
@@ -98,6 +106,8 @@ export default function SDashboard() {
         return <WorkContent />;
       case "About":
         return <AboutContent />;
+      case "Exam":
+        return <Exam />;
       default:
         return null;
     }
@@ -106,7 +116,46 @@ export default function SDashboard() {
   const handleLinkClick = (link) => {
     setActiveLink(link);
   };
+   
+  const [selectedComponent, setSelectedComponent] = useState('Attendance');
 
+  const handleToggleClick = (component) => {
+    setSelectedComponent(component);
+  };
+  const renderComponent = () => {
+    switch (selectedComponent) {
+      case 'Attendance':
+        return <Attendance  prop={data} />;
+      case 'TimeTable':
+        return <Timetable />;
+      case 'Events':
+        return <Events />;
+      case 'Profile':
+        return <StudentComponent />;
+      case 'Exam':
+        return <Exam />;
+
+      default:
+        return null;
+    }
+    
+
+  };
+  const renderCarsoleComponent = () => {
+    switch (count) {
+      case 0:
+        return <Attendance prop={data}/>;
+      case 1:
+        return <Timetable />;
+      case 2:
+        return <Exam />;
+
+      case 4:
+        return <Events />;
+      default:
+        return null;
+    }
+  };
   return (
     <>
       <div>
@@ -217,7 +266,7 @@ export default function SDashboard() {
                   />
                 </svg>
               </a>
-              <a href="#">
+              <a href="#" onClick={() => handleToggleClick("Profile")}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="37"
@@ -349,7 +398,7 @@ export default function SDashboard() {
               />
             </svg>
           </a>
-          <a href="#">
+          <a href="#" onClick={() => handleToggleClick("Profile")}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="37"
@@ -417,19 +466,19 @@ export default function SDashboard() {
         <div className="toggling-bar">
           <ul>
             <li>
-              <a href="#">ATTENDENCE</a>
+              <a href="#" onClick={() => handleToggleClick("Attendance")}>ATTENDENCE</a>
             </li>
             <li>
-              <a href="#">TIME TABLE</a>
+              <a href="#" onClick={() => handleToggleClick("TimeTable")} >TIME TABLE</a>
             </li>
             <li>
-              <a href="#">EXAMS</a>
+              <a href="#" onClick={() => handleToggleClick("Exam")} >EXAMS</a>
             </li>
             <li>
               <a href="#">PLACEMENT</a>
             </li>
             <li>
-              <a href="#">EVENTS</a>
+              <a href="#" onClick={() => handleToggleClick("Events")} >EVENTS</a>
             </li>
           </ul>
         </div>
@@ -486,12 +535,14 @@ export default function SDashboard() {
           </button>
         </div>
       </div>
-      <div className="datato">
-        {data ? <Attendance prop={data} /> : "Nothing to show here"}
-        <Exam />
+      <div id="showToggling" className="datato">
+        {renderComponent() };
+      </div>
+      <div id="showCarsole" className="datato">
+        { renderCarsoleComponent() };
       </div>
        
       <ToastContainer />
     </>
   );
-}
+};
