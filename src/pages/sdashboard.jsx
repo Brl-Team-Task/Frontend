@@ -106,6 +106,10 @@ export default function SDashboard() {
   const handleLinkClick = (link) => {
     setActiveLink(link);
   };
+    const [showStudentComponent, setShowStudentComponent] = useState(false);
+    const handleProfileClick = () => {
+      setShowStudentComponent(!showStudentComponent);
+    };
 
   return (
     <>
@@ -217,7 +221,7 @@ export default function SDashboard() {
                   />
                 </svg>
               </a>
-              <a href="#">
+              <a href="#" onClick={handleProfileClick}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="37"
@@ -488,7 +492,7 @@ export default function SDashboard() {
       </div>
       <div className="datato">
         {data ? <Attendance prop={data} /> : "Nothing to show here"}
-        <StudentComponent />
+        {showStudentComponent && <StudentComponent />}
       </div>
       <ToastContainer />
     </>
