@@ -47,7 +47,7 @@ export default function SDashboard() {
       toast.error("Internal Server Error");
     }
   };
-  const [count, setCount] = useState(1);
+  const [count, setCount] = useState(0);
   const [slideIndex, setSlideIndex] = useState(0);
   const slidesRef = useRef(null);
   const totalSlides = 5;
@@ -62,17 +62,15 @@ export default function SDashboard() {
   };
 
   const showNextSlide = () => {
+    console.log(count);
     setSlideIndex((prevIndex) => (prevIndex + 1) % totalSlides);
-    if (count < 5) {
-      setCount(count + 1);
-    }
+      // console.log(count+1);
+      setCount((count + 1)%5);
   };
 
   const showPrevSlide = () => {
     setSlideIndex((prevIndex) => (prevIndex - 1 + totalSlides) % totalSlides);
-    if (count > 1) {
-      setCount(count - 1);
-    }
+      setCount((count+5 - 1)%5);
   };
 
   const toggleSection = () => {
@@ -145,14 +143,14 @@ export default function SDashboard() {
   };
   const renderCarsoleComponent = () => {
     switch (count) {
-      case 1:
+      case 0:
         return <Attendance prop={data}/>;
-      case 2:
+      case 1:
         return <Timetable />;
-      case 3:
+      case 2:
         return <Exam />;
 
-      case 5:
+      case 4:
         return <Events />;
       default:
         return null;
@@ -537,9 +535,11 @@ export default function SDashboard() {
           </button>
         </div>
       </div>
-      <div className="datato">
-        {/* {renderComponent()} */}
-        {renderCarsoleComponent()}
+      <div id="showToggling" className="datato">
+        {renderComponent() };
+      </div>
+      <div id="showCarsole" className="datato">
+        { renderCarsoleComponent() };
       </div>
        
       <ToastContainer />
