@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
 import axios from "axios";
-// import "./fdashboard.css";
+import "../pages/fdashboard.css";
 
 function StudentComponent (){
     const token = localStorage.getItem("Token");
@@ -25,7 +25,6 @@ function StudentComponent (){
           }
         }
         fetchFaculty();
-      
        },[]);
     return(
         <>
