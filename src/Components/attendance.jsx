@@ -2,6 +2,7 @@ import React from "react";
 import Graph from "../Components/graph";
 import Card from "../Components/card";
 import "./attendance.css";
+import Calender from "../Components/calender";
 
 export default function Attendance({ prop }) {
   const data = prop;
@@ -30,6 +31,7 @@ export default function Attendance({ prop }) {
             </div>
           </div>
         </div>
+        <Calender/>
       </div>
     </>
   );

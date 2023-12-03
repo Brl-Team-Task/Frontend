@@ -7,9 +7,10 @@ import "./sdashboard.css";
 import clgImg from "../assets/AKGEC.png";
 import { useNavigate } from "react-router";
 import Attendance from "../Components/attendance";
-import StudentComponent from "../Components/sprofile";
 import Timetable from "../Components/TimeTable";
 import Events from "../Components/Events";
+import StudentComponent from "../Components/sprofile";
+import Exam from "../Components/Exam";
 
 export default function SDashboard() {
   const token = localStorage.getItem("Token");
@@ -100,6 +101,8 @@ export default function SDashboard() {
         return <WorkContent />;
       case "About":
         return <AboutContent />;
+      case "Exam":
+        return <Exam />;
       default:
         return null;
     }
@@ -457,7 +460,7 @@ export default function SDashboard() {
               <a href="#" onClick={() => handleToggleClick("TimeTable")} >TIME TABLE</a>
             </li>
             <li>
-              <a href="#">EXAMS</a>
+              <a href="#" onClick={() => handleToggleClick("Exam")} >EXAMS</a>
             </li>
             <li>
               <a href="#">PLACEMENT</a>
@@ -521,17 +524,9 @@ export default function SDashboard() {
         </div>
       </div>
       <div className="datato">
-        {/* { data ? <Attendance prop={data} /> : "Nothing to show here"} */}
-        {/* {showStudentComponent && <StudentComponent />} */}
-        {/* <StudentComponent /> */}
-        {/* <Timetable /> */}
-        {/* <Events /> */}
-        {/* {showAttendance && <Attendance  prop={data} />}
-        {showTimeTable && <Timetable />}
-        {showEvents && <Events />}
-        {showProfile && <StudentComponent />} */}
         {renderComponent()}
       </div>
+       
       <ToastContainer />
     </>
   );

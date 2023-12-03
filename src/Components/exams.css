@@ -1,0 +1,16 @@
+.ue,.oe,.pe{
+    font: inter;
+    font-size: 2vw;
+     border-bottom: .2vw solid red;
+    padding-bottom: 1vw;
+    font-weight: bolder;
+}
+tr{
+    padding:1vw ;
+}
+td{
+    font-size:1.5vw ;
+    font-weight: bold;
+    padding-left: 4vw;
+    padding-right: 9vw;
+}
