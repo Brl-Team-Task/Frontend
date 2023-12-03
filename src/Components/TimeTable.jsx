@@ -50,43 +50,49 @@ const Timetable = () => {
   );
 
   return (
-    <div className="content">
-      <div className="dropdown">
-        <label htmlFor="tt">Choose Class : </label>
-        <select
-          id="tt"
-          name="tt"
-          value={selectedValue}
-          onChange={handleSelectChange}
-        >
-          <option value="">Select Class</option>
-          <option value="CSE1">CSE-1</option>
-          <option value="CSE2">CSE-2</option>
-          <option value="CSE3">CSE-3</option>
-          <option value="CSE(DS)-1">CSE(DS)-1</option>
-          <option value="CSE(DS)-2">CSE(DS)-2</option>
-          <option value="CSE(AIML)-1">CSE(AIML)-1</option>
-          <option value="CSE(AIML)-2">CSE(AIML)-2</option>
-          <option value="CS-1">CS-1</option>
-          <option value="CS-2">CS-2</option>
-        </select>
-      </div>
-      {selectedTimetable ? (
-        <div>
-          <div className="time">
-            <img src={selectedTimetable.time_table_url} alt="Timetable" />
-          </div>
-          <div className="download">
-            <button
-              onClick={() => downloadImage(selectedTimetable.time_table_url)}
-            >
-              Download Timetable
-            </button>
-          </div>
+    <div className="graph">
+      <div className="content">
+        <div className="dropdown">
+          <label htmlFor="tt">Choose Class : </label>
+          <select
+            id="tt"
+            name="tt"
+            value={selectedValue}
+            onChange={handleSelectChange}
+          >
+            <option value="">Select Class</option>
+            <option value="CSE1">CSE-1</option>
+            <option value="CSE2">CSE-2</option>
+            <option value="CSE3">CSE-3</option>
+            <option value="CSE(DS)-1">CSE(DS)-1</option>
+            <option value="CSE(DS)-2">CSE(DS)-2</option>
+            <option value="CSE(AIML)-1">CSE(AIML)-1</option>
+            <option value="CSE(AIML)-2">CSE(AIML)-2</option>
+            <option value="CS-1">CS-1</option>
+            <option value="CS-2">CS-2</option>
+          </select>
         </div>
-      ) : (
-        <p className="head">Please select a class to view the timetable.</p>
-      )}
+        {selectedTimetable ? (
+          <div>
+            <div className="time">
+              <img src={selectedTimetable.time_table_url} alt="Timetable" />
+            </div>
+            <div className="download">
+              <button
+                onClick={() => downloadImage(selectedTimetable.time_table_url)}
+              >
+                Download Timetable
+              </button>
+            </div>
+          </div>
+        ) : (
+          <>
+          <br />
+          <br />
+          <p className="head">Please select a class to view the timetable.</p>
+          </>
+        )}
+      </div>
     </div>
   );
 };

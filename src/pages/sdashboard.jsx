@@ -198,7 +198,7 @@ export default function SDashboard() {
           <img src={clgImg} alt="" />
           <div className="icons">
             <div className="upper-icons">
-              <a href="#">
+              <a href="#" onClick={() => handleToggleClick("Attendance")}>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="41"
