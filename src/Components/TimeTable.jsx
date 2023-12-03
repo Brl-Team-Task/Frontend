@@ -87,8 +87,6 @@ const Timetable = () => {
           </div>
         ) : (
           <>
-          <br />
-          <br />
           <p className="head">Please select a class to view the timetable.</p>
           </>
         )}
