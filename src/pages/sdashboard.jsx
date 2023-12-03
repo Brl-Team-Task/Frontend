@@ -64,7 +64,6 @@ export default function SDashboard() {
   const showNextSlide = () => {
     console.log(count);
     setSlideIndex((prevIndex) => (prevIndex + 1) % totalSlides);
-      // console.log(count+1);
       setCount((count + 1)%5);
   };
 
@@ -93,29 +92,6 @@ export default function SDashboard() {
       handleSubmit();
     }
   }, []);
-
-  const ActiveLinkContext = React.createContext();
-  const [activeLink, setActiveLink] = useState("Home");
-  const Content = () => {
-    const activeLink = React.useContext(ActiveLinkContext);
-
-    switch (activeLink) {
-      case "Home":
-        return <HomeContent />;
-      case "Work":
-        return <WorkContent />;
-      case "About":
-        return <AboutContent />;
-      case "Exam":
-        return <Exam />;
-      default:
-        return null;
-    }
-  };
-  // Handle link clicks
-  const handleLinkClick = (link) => {
-    setActiveLink(link);
-  };
    
   const [selectedComponent, setSelectedComponent] = useState('Attendance');
 
@@ -505,7 +481,7 @@ export default function SDashboard() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="17"
-              height="26"
+              height="20"
               viewBox="0 0 17 26"
               fill="none"
             >
@@ -521,7 +497,7 @@ export default function SDashboard() {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="17"
-              height="26"
+              height="20"
               viewBox="0 0 17 26"
               fill="none"
             >

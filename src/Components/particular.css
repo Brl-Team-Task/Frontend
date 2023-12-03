@@ -1,0 +1,49 @@
+.particular {
+  background-color: #015aad;
+  padding: 0.3vw;
+  border-radius: 8px;
+  font-weight: bold;
+  width: 35rem;
+  height: 12rem;
+}
+
+.left {
+  float: left;
+}
+
+.left select {
+  padding: 0.4rem;
+  margin: 0.5em 1em;
+  font-size: 1.2rem;
+  background-color: #d3e2ff;
+}
+
+.flexbox,
+.data {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.data {
+  margin: 1em 1.5em;
+  gap: 0.5em;
+}
+
+.teach,
+.atten {
+  font-size: 1.2rem;
+}
+
+.sub {
+  font-size: 1.5rem;
+  color: #f95252;
+}
+
+@media screen and (max-width: 585px) {
+  .particular {
+    width: 25rem;
+    height: 12rem;
+    margin: 0 1em;
+  }
+}
