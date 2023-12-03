@@ -31,7 +31,7 @@ export default function Attendance({ prop }) {
             </div>
           </div>
         </div>
-        <Calender/>
+        <Calender data={data}/>
       </div>
     </>
   );

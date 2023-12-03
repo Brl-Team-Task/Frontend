@@ -536,10 +536,10 @@ export default function SDashboard() {
         </div>
       </div>
       <div id="showToggling" className="datato">
-        {renderComponent() };
+        {renderComponent() }.
       </div>
       <div id="showCarsole" className="datato">
-        { renderCarsoleComponent() };
+        { renderCarsoleComponent() }
       </div>
        
       <ToastContainer />
