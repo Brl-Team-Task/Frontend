@@ -25,6 +25,14 @@
     padding: 1em 0.5em !important;
 }
 
+.react-calendar__tile--now {
+    border-radius: 50%;
+}
+
+.react-calendar__month-view__days__day--weekend{
+    color: black;
+}
+
 @media screen and (max-width: 585px){
     .calen{
         flex-direction: column;

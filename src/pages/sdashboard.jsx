@@ -64,12 +64,12 @@ export default function SDashboard() {
   const showNextSlide = () => {
     console.log(count);
     setSlideIndex((prevIndex) => (prevIndex + 1) % totalSlides);
-      setCount((count + 1)%5);
+    setCount((count + 1) % 5);
   };
 
   const showPrevSlide = () => {
     setSlideIndex((prevIndex) => (prevIndex - 1 + totalSlides) % totalSlides);
-      setCount((count+5 - 1)%5);
+    setCount((count + 5 - 1) % 5);
   };
 
   const toggleSection = () => {
@@ -92,35 +92,33 @@ export default function SDashboard() {
       handleSubmit();
     }
   }, []);
-   
-  const [selectedComponent, setSelectedComponent] = useState('Attendance');
+
+  const [selectedComponent, setSelectedComponent] = useState("Attendance");
 
   const handleToggleClick = (component) => {
     setSelectedComponent(component);
   };
   const renderComponent = () => {
     switch (selectedComponent) {
-      case 'Attendance':
-        return <Attendance  prop={data} />;
-      case 'TimeTable':
+      case "Attendance":
+        return <Attendance prop={data} />;
+      case "TimeTable":
         return <Timetable />;
-      case 'Events':
+      case "Events":
         return <Events />;
-      case 'Profile':
+      case "Profile":
         return <StudentComponent />;
-      case 'Exam':
+      case "Exam":
         return <Exam />;
 
       default:
         return null;
     }
-    
-
   };
   const renderCarsoleComponent = () => {
     switch (count) {
       case 0:
-        return <Attendance prop={data}/>;
+        return <Attendance prop={data} />;
       case 1:
         return <Timetable />;
       case 2:
@@ -139,15 +137,15 @@ export default function SDashboard() {
           <div className="left-nav">
             <svg
               className="big-hamburger"
-              onClick={toggleSection}
-              xmlns="http://www.w3.org/2000/svg"
               width="60"
               height="60"
               viewBox="0 0 60 60"
               fill="none"
+              onClick={toggleSection}
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M7.5 45H52.5V40H7.5V45ZM7.5 32.5H52.5V27.5H7.5V32.5ZM7.5 15V20H52.5V15H7.5Z"
+                d="M7.5 42.5C7.5 43.8807 8.61929 45 10 45H50C51.3807 45 52.5 43.8807 52.5 42.5V42.5C52.5 41.1193 51.3807 40 50 40H10C8.61929 40 7.5 41.1193 7.5 42.5V42.5ZM7.5 30C7.5 31.3807 8.61929 32.5 10 32.5H50C51.3807 32.5 52.5 31.3807 52.5 30V30C52.5 28.6193 51.3807 27.5 50 27.5H10C8.61929 27.5 7.5 28.6193 7.5 30V30ZM10 15C8.61929 15 7.5 16.1193 7.5 17.5V17.5C7.5 18.8807 8.61929 20 10 20H50C51.3807 20 52.5 18.8807 52.5 17.5V17.5C52.5 16.1193 51.3807 15 50 15H10Z"
                 fill="black"
               />
             </svg>
@@ -397,7 +395,7 @@ export default function SDashboard() {
         </div>
         <div className="small-user-container">
           <div className="small-user-content">
-            <p>Palak Verma</p>
+            <p>{data.name}</p>
             <a href="#">NOTICE</a>
           </div>
           <div className="small-user-content">
@@ -442,19 +440,27 @@ export default function SDashboard() {
         <div className="toggling-bar">
           <ul>
             <li>
-              <a href="#" onClick={() => handleToggleClick("Attendance")}>ATTENDENCE</a>
+              <a href="#" onClick={() => handleToggleClick("Attendance")}>
+                ATTENDENCE
+              </a>
             </li>
             <li>
-              <a href="#" onClick={() => handleToggleClick("TimeTable")} >TIME TABLE</a>
+              <a href="#" onClick={() => handleToggleClick("TimeTable")}>
+                TIME TABLE
+              </a>
             </li>
             <li>
-              <a href="#" onClick={() => handleToggleClick("Exam")} >EXAMS</a>
+              <a href="#" onClick={() => handleToggleClick("Exam")}>
+                EXAMS
+              </a>
             </li>
             <li>
               <a href="#">PLACEMENT</a>
             </li>
             <li>
-              <a href="#" onClick={() => handleToggleClick("Events")} >EVENTS</a>
+              <a href="#" onClick={() => handleToggleClick("Events")}>
+                EVENTS
+              </a>
             </li>
           </ul>
         </div>
@@ -512,13 +518,13 @@ export default function SDashboard() {
         </div>
       </div>
       <div id="showToggling" className="datato">
-        {renderComponent() }.
+        {renderComponent()}.
       </div>
       <div id="showCarsole" className="datato">
-        { renderCarsoleComponent() }
+        {renderCarsoleComponent()}
       </div>
-       
+
       <ToastContainer />
     </>
   );
-};
+}
