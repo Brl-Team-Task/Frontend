@@ -11,6 +11,7 @@ import Timetable from "../Components/TimeTable";
 import Events from "../Components/Events";
 import StudentComponent from "../Components/sprofile";
 import Exam from "../Components/Exam";
+import Prediction from "../Components/prediction";
 
 export default function SDashboard() {
   const token = localStorage.getItem("Token");
@@ -110,6 +111,8 @@ export default function SDashboard() {
         return <StudentComponent />;
       case "Exam":
         return <Exam />;
+      case "Prediction":
+        return <Prediction />;
 
       default:
         return null;
@@ -123,7 +126,8 @@ export default function SDashboard() {
         return <Timetable />;
       case 2:
         return <Exam />;
-
+      case 3:
+        return <Prediction />;
       case 4:
         return <Events />;
       default:
@@ -455,7 +459,7 @@ export default function SDashboard() {
               </a>
             </li>
             <li>
-              <a href="#">PLACEMENT</a>
+              <a href="#" onClick={() => handleToggleClick("Prediction")}>PREDICTION</a>
             </li>
             <li>
               <a href="#" onClick={() => handleToggleClick("Events")}>
