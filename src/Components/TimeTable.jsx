@@ -1,52 +1,42 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import './TimeTable.css';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import "./TimeTable.css";
 
 const downloadImage = async (imageUrl) => {
   try {
-    const response = await axios.get(imageUrl, { responseType: 'arraybuffer' });
+    const response = await axios.get(imageUrl, { responseType: "arraybuffer" });
     const data = new Blob([response.data]);
     const url = window.URL.createObjectURL(data);
 
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = url;
-    link.download = 'timetable.png';
+    link.download = "timetable.png";
     link.click();
   } catch (error) {
-    console.error('Error downloading image:', error);
+    console.error("Error downloading image:", error);
   }
 };
 
-
-const Timetable= () => {
- 
+const Timetable = () => {
   const [timetableData, setTimetableData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [selectedValue, setSelectedValue] = useState('');
+  const [selectedValue, setSelectedValue] = useState("");
 
   useEffect(() => {
     const fetchTimetableData = async () => {
       try {
-        
-        const response = await axios.get('https://erp-backend-mqly.onrender.com/api/gettimetable/');
-        
-       
+        const response = await axios.get(
+          "https://erp-backend-mqly.onrender.com/api/gettimetable/"
+        );
         setTimetableData(response.data.timetable_data);
-        console.log(response.data.timetable_data);
       } catch (error) {
-      
-        
       } finally {
-     
         setLoading(false);
       }
     };
-
-    
     fetchTimetableData();
-  }, []); 
+  }, []);
 
- 
   const handleSelectChange = (event) => {
     setSelectedValue(event.target.value);
   };
@@ -54,36 +44,53 @@ const Timetable= () => {
   if (loading) {
     return <p>Loading...</p>;
   }
-  
-  const selectedTimetable = timetableData.find(timetable => timetable.section === selectedValue);
+
+  const selectedTimetable = timetableData.find(
+    (timetable) => timetable.section === selectedValue
+  );
 
   return (
-    <div className='content'>
-      <div className='dropdown'>
-        <label htmlFor="tt">Choose Class : </label>
-        <select id="tt" name="tt" value={selectedValue} onChange={handleSelectChange}>
-          <option value="">Select Class</option>
-          <option value="CSE1">CSE-1</option>
-          <option value="CSE2">CSE-2</option>
-          <option value="CSE3">CSE-3</option>
-          <option value="CSE(DS)-1">CSE(DS)-1</option>
-          <option value="CSE(DS)-2">CSE(DS)-2</option>
-          <option value="CSE(AIML)-1">CSE(AIML)-1</option>
-          <option value="CSE(AIML)-2">CSE(AIML)-2</option>
-          <option value="CS-1">CS-1</option>
-          <option value="CS-2">CS-2</option>
-        </select>
-      </div>
-      {selectedTimetable ? (
-        <div>
-          <div className='time'><img src={selectedTimetable.time_table_url} alt="Timetable" /></div>
-          <div className='download'><button onClick={() => downloadImage(selectedTimetable.time_table_url)}>
-            Download Timetable
-          </button></div>
+    <div className="graph">
+      <div className="content">
+        <div className="dropdown">
+          <label htmlFor="tt">Choose Class : </label>
+          <select
+            id="tt"
+            name="tt"
+            value={selectedValue}
+            onChange={handleSelectChange}
+          >
+            <option value="">Select Class</option>
+            <option value="CSE1">CSE-1</option>
+            <option value="CSE2">CSE-2</option>
+            <option value="CSE3">CSE-3</option>
+            <option value="CSE(DS)-1">CSE(DS)-1</option>
+            <option value="CSE(DS)-2">CSE(DS)-2</option>
+            <option value="CSE(AIML)-1">CSE(AIML)-1</option>
+            <option value="CSE(AIML)-2">CSE(AIML)-2</option>
+            <option value="CS-1">CS-1</option>
+            <option value="CS-2">CS-2</option>
+          </select>
         </div>
-      ) : (
-        <p className='head'>Please select a class to view the timetable.</p>
-      )}
+        {selectedTimetable ? (
+          <div>
+            <div className="time">
+              <img src={selectedTimetable.time_table_url} alt="Timetable" />
+            </div>
+            <div className="download">
+              <button
+                onClick={() => downloadImage(selectedTimetable.time_table_url)}
+              >
+                Download Timetable
+              </button>
+            </div>
+          </div>
+        ) : (
+          <>
+          <p className="head">Please select a class to view the timetable.</p>
+          </>
+        )}
+      </div>
     </div>
   );
 };

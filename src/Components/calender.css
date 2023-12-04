@@ -1,0 +1,50 @@
+.calen{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.react-calendar{
+    border-radius: 0.5em;
+    margin: 1em 0em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: none !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.react-calendar__navigation{
+    height: fit-content !important;
+    padding: 1em;
+}
+
+.react-calendar__tile, .react-calendar__month-view__days__day{
+    padding: 1em 0.5em !important;
+}
+
+.react-calendar__tile--now {
+    border-radius: 50%;
+}
+
+.react-calendar__month-view__days__day--weekend{
+    color: black;
+}
+
+@media screen and (max-width: 585px){
+    .calen{
+        flex-direction: column;
+        gap: 1.5em;
+    }
+    .react-calendar{
+        margin: 0 1em;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .react-calendar__navigation__arrow{
+        display: none !important;
+    }
+}

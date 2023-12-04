@@ -7,6 +7,7 @@ import PassConfirm from "../pages//PassConfirm";
 import SDashboard from "../pages/sdashboard";
 import Feedback from "../pages/Feedback";
 import ChangePassword from "../pages/changePassword";
+import FDashboard from "../pages/fdashboard";
 import Branch from "./Branch";
 import Utscore from "./Utscore";
 import OpenElec from "./OpenElec";
@@ -22,9 +23,7 @@ function App() {
         <Route path="/PassConfirm" element={<PassConfirm />} />
         <Route path="/changePassword" element={<ChangePassword />} />
         <Route path="/sdashboard" element={<SDashboard />} />
-        <Route path="/Branch" element={<Branch />} />
-        <Route path="/Utscore" element={<Utscore />} />
-        <Route path="/OpenElec" element={<OpenElec />} />
+        <Route path="/Feedback" element={<Feedback />} />
       </Routes>
     </BrowserRouter>
   );

@@ -24,7 +24,7 @@ export default function Graph({ data }) {
   }
 
   return (
-    <div style={{ width: "30vw" }}>
+    <div style={{ width: "35vw" }}>
       <PieChart style={{width: "100%" , height: "100%"}} width={400} height={350}>
         <Pie
           dataKey="percentage"

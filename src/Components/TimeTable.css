@@ -6,19 +6,27 @@
   padding: 0.3vw;
   border-radius: 8px;
   font-weight: bold;
-  position: absolute;
+  position: relative;
 }
 
 .time {
   margin: 0 3em;
 }
 
+.time img {
+  height: 40rem;
+  position: relative;
+  margin: 5rem 0;
+}
+
 .head {
   font-size: 1.5vw;
   text-align: center;
+  position: relative;
+  margin: 1em 0;
 }
 
-.download button{
+.download button {
   background-color: #00a7f4;
   font-size: 1vw;
   padding: 0.3vw;
@@ -38,4 +46,22 @@
 
 #tt {
   border-radius: 6px;
+}
+
+@media screen and (max-width: 600px) {
+  .time img {
+    height: 30rem;
+  }
+}
+
+@media screen and (max-width: 545px) {
+  .time img {
+    height: 20rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .time img {
+    height: 15rem;
+  }
 }

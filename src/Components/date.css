@@ -1,0 +1,14 @@
+.date{
+    transform: rotate(-90deg);
+}
+
+.date p{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 585px){
+    .date{
+        transform: rotate(0deg);
+    }
+}
