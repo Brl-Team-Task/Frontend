@@ -22,6 +22,7 @@ function App() {
         <Route path="/PassConfirm" element={<PassConfirm />} />
         <Route path="/changePassword" element={<ChangePassword />} />
         <Route path="/sdashboard" element={<SDashboard />} />
+        <Route path="/fdashboard" element={<FDashboard />} />
         <Route path="/Feedback" element={<Feedback />} />
         <Route path="/Branch" element={<Branch />} />
         <Route path="/Utscore" element={<Utscore />} />
