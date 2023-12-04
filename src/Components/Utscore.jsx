@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import './Ut.css'
 
 const Utscore = () => {
   const [Chemistry, setChemistry] = useState("");
@@ -49,6 +50,10 @@ const Utscore = () => {
 
   return (
     <>
+    <div className="Utbg">
+      <h1>UT SCORE PREDICTOR</h1>
+   <div className="UtLayout">
+    <div className="Ut">
       <form onSubmit={handleSubmit}>
         <label>Chemistry</label>
         <input
@@ -95,8 +100,11 @@ const Utscore = () => {
         </button>
       </form>
       {prediction && <p>Prediction: {prediction}</p>}
-      <p>Total Score: {totalScore}</p>
-      <p>Percentage: {percentage}%</p>
+      <h3>Total Score: {totalScore}</h3>
+      <h3>Percentage: {percentage}%</h3>
+      </div>
+      </div>
+      </div>
     </>
   );
 };

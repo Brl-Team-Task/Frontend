@@ -12,7 +12,6 @@ import Branch from "./Branch";
 import Utscore from "./Utscore";
 import OpenElec from "./OpenElec";
 
-
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +23,9 @@ function App() {
         <Route path="/changePassword" element={<ChangePassword />} />
         <Route path="/sdashboard" element={<SDashboard />} />
         <Route path="/Feedback" element={<Feedback />} />
+        <Route path="/Branch" element={<Branch />} />
+        <Route path="/Utscore" element={<Utscore />} />
+        <Route path="/OpenElec" element={<OpenElec/>} />
       </Routes>
     </BrowserRouter>
   );
