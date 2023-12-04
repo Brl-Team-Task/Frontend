@@ -19,6 +19,7 @@
   .Predict{
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap ;
   }
   .Utimg{
     background: url(../assets/ut.png);
@@ -41,7 +42,6 @@
     font-size: 2rem !important;
     color: rgba(0, 0, 0, 0.91);
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    /* margin-top: -40px; */
   }
   .Utimg a,.Branchimg a,.Oeimg a{
     text-decoration: none;
@@ -77,4 +77,9 @@
     align-items: center;
     height:500px;
     justify-content: space-around;
+  }
+  @media(max-width:800px){
+.Predict{
+  flex-direction: column;
+}
   }

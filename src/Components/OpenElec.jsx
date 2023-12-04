@@ -40,7 +40,7 @@ const OpenElec = () => {
   return (
     <>
         <div className="Utbg">
-      <h1>BRANCH CHANGE</h1>
+      <h1>OPEN ELECTIVE PREDICTION</h1>
    <div className="UtLayout">
     <div className="Ut">
       <form onSubmit={handleSubmit}>
