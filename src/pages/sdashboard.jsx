@@ -481,7 +481,7 @@ export default function SDashboard() {
               <a href="#"></a>EXAMS
             </div>
             <div className="slide">
-              <a href="#"></a>PLACEMENT
+              <a href="#"></a>PREDICTION
             </div>
             <div className="slide slide5">
               <a href="#"></a>EVENTS
