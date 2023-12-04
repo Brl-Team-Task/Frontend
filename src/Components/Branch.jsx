@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./Branch.css"
 
 const Branch = () => {
   const [id, setUserId] = useState("");
@@ -28,6 +29,10 @@ const Branch = () => {
 
   return (
     <>
+        <div className="Utbg">
+      <h1>BRANCH CHANGE</h1>
+   <div className="UtLayout">
+    <div className="Ut">
       <form onSubmit={handleSubmit}>
         <label>PUT Percentage:</label>
         <input
@@ -42,7 +47,9 @@ const Branch = () => {
         </button>
       </form>
       {prediction && <p>Prediction: {prediction}</p>}
-
+      </div>
+      </div>
+      </div>
     </>
   );
 };

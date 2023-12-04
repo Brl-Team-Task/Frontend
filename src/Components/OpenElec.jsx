@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import './OE.css'
 
 const OpenElec = () => {
   const [Chemistry, setChemistry] = useState("");
@@ -38,6 +39,10 @@ const OpenElec = () => {
 
   return (
     <>
+        <div className="Utbg">
+      <h1>BRANCH CHANGE</h1>
+   <div className="UtLayout">
+    <div className="Ut">
       <form onSubmit={handleSubmit}>
         <label>Chemistry</label>
         <input
@@ -84,6 +89,9 @@ const OpenElec = () => {
         </button>
       </form>
       {prediction && <p>Prediction: {prediction}</p>}
+      </div>
+      </div>
+      </div>
     </>
   );
 };
