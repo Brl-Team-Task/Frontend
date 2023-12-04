@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./Branch.css"
+import "./Branch.css";
 
 const Branch = () => {
   const [id, setUserId] = useState("");
@@ -29,26 +29,28 @@ const Branch = () => {
 
   return (
     <>
+      <div className="backrr">
         <div className="Utbg">
-      <h1>BRANCH CHANGE</h1>
-   <div className="UtLayout">
-    <div className="Ut">
-      <form onSubmit={handleSubmit}>
-        <label>PUT Percentage:</label>
-        <input
-          type="text"
-          value={id}
-          onChange={(e) => setUserId(e.target.value)}
-          required
-          placeholder="PUT Percentage"
-        />
-        <button className="submit" type="submit">
-          Predict
-        </button>
-      </form>
-      {prediction && <p>Prediction: {prediction}</p>}
-      </div>
-      </div>
+          <h1>BRANCH CHANGE</h1>
+          <div className="UtLayout">
+            <div className="Ut">
+              <form onSubmit={handleSubmit}>
+                <label>PUT Percentage:</label>
+                <input
+                  type="text"
+                  value={id}
+                  onChange={(e) => setUserId(e.target.value)}
+                  required
+                  placeholder="PUT Percentage"
+                />
+                <button className="submit" type="submit">
+                  Predict
+                </button>
+              </form>
+              {prediction && <p>Prediction: {prediction}</p>}
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

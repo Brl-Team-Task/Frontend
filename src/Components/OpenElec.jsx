@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import './OE.css'
+import "./OE.css";
 
 const OpenElec = () => {
   const [Chemistry, setChemistry] = useState("");
@@ -21,7 +21,13 @@ const OpenElec = () => {
       const softSkillsScore = Number(SoftSkills) || 0;
 
       const data = {
-        features: [chemistryScore, mathsScore, electronicsScore, mechanicalScore, softSkillsScore],
+        features: [
+          chemistryScore,
+          mathsScore,
+          electronicsScore,
+          mechanicalScore,
+          softSkillsScore,
+        ],
       };
 
       const response = await axios.post(
@@ -39,58 +45,60 @@ const OpenElec = () => {
 
   return (
     <>
+      <div className="backrr">
         <div className="Utbg">
-      <h1>OPEN ELECTIVE PREDICTION</h1>
-   <div className="UtLayout">
-    <div className="Ut">
-      <form onSubmit={handleSubmit}>
-        <label>Chemistry</label>
-        <input
-          type="text"
-          value={Chemistry}
-          onChange={(e) => setChemistry(e.target.value)}
-          required
-          placeholder="Chemistry"
-        />
-        <label>Maths</label>
-        <input
-          type="text"
-          value={Maths}
-          onChange={(e) => setMaths(e.target.value)}
-          required
-          placeholder="Maths"
-        />
-        <label>Electronics</label>
-        <input
-          type="text"
-          value={Electronics}
-          onChange={(e) => setElectronics(e.target.value)}
-          required
-          placeholder="Electronics"
-        />
-        <label>Mechanical </label>
-        <input
-          type="text"
-          value={Mechanical}
-          onChange={(e) => setMechanical(e.target.value)}
-          required
-          placeholder="Mechanical"
-        />
-        <label>Soft Skills: </label>
-        <input
-          type="text"
-          value={SoftSkills}
-          onChange={(e) => setSoftSkills(e.target.value)}
-          required
-          placeholder="SoftSkills"
-        />
-        <button className="submit" type="submit">
-          Predict
-        </button>
-      </form>
-      {prediction && <p>Prediction: {prediction}</p>}
-      </div>
-      </div>
+          <h1>OPEN ELECTIVE PREDICTION</h1>
+          <div className="UtLayout">
+            <div className="Ut">
+              <form onSubmit={handleSubmit}>
+                <label>Chemistry</label>
+                <input
+                  type="text"
+                  value={Chemistry}
+                  onChange={(e) => setChemistry(e.target.value)}
+                  required
+                  placeholder="Chemistry"
+                />
+                <label>Maths</label>
+                <input
+                  type="text"
+                  value={Maths}
+                  onChange={(e) => setMaths(e.target.value)}
+                  required
+                  placeholder="Maths"
+                />
+                <label>Electronics</label>
+                <input
+                  type="text"
+                  value={Electronics}
+                  onChange={(e) => setElectronics(e.target.value)}
+                  required
+                  placeholder="Electronics"
+                />
+                <label>Mechanical </label>
+                <input
+                  type="text"
+                  value={Mechanical}
+                  onChange={(e) => setMechanical(e.target.value)}
+                  required
+                  placeholder="Mechanical"
+                />
+                <label>Soft Skills: </label>
+                <input
+                  type="text"
+                  value={SoftSkills}
+                  onChange={(e) => setSoftSkills(e.target.value)}
+                  required
+                  placeholder="SoftSkills"
+                />
+                <button className="submit" type="submit">
+                  Predict
+                </button>
+              </form>
+              {prediction && <p>Prediction: {prediction}</p>}
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

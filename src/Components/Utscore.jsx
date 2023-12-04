@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import './Ut.css'
+import "./Ut.css";
 
 const Utscore = () => {
   const [Chemistry, setChemistry] = useState("");
@@ -10,8 +10,8 @@ const Utscore = () => {
   const [SoftSkills, setSoftSkills] = useState("");
   const [prediction, setPrediction] = useState(null);
   const [error, setError] = useState(null);
-  const [totalScore, setTotalScore] = useState(0); 
-  const [percentage, setPercentage] = useState(0); 
+  const [totalScore, setTotalScore] = useState(0);
+  const [percentage, setPercentage] = useState(0);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,17 +22,28 @@ const Utscore = () => {
       const mechanicalScore = Number(Mechanical) || 0;
       const softSkillsScore = Number(SoftSkills) || 0;
 
-      const total = chemistryScore + mathsScore + electronicsScore + mechanicalScore + softSkillsScore;
+      const total =
+        chemistryScore +
+        mathsScore +
+        electronicsScore +
+        mechanicalScore +
+        softSkillsScore;
       setTotalScore(total);
 
-      const totalSubjects = 5; 
-      const maxScorePerSubject = 100; 
+      const totalSubjects = 5;
+      const maxScorePerSubject = 100;
       const totalMaxScore = totalSubjects * maxScorePerSubject;
       const percentage = (total / totalMaxScore) * 100;
       setPercentage(percentage);
 
       const data = {
-        features: [chemistryScore, mathsScore, electronicsScore, mechanicalScore, softSkillsScore],
+        features: [
+          chemistryScore,
+          mathsScore,
+          electronicsScore,
+          mechanicalScore,
+          softSkillsScore,
+        ],
       };
 
       const response = await axios.post(
@@ -50,60 +61,62 @@ const Utscore = () => {
 
   return (
     <>
-    <div className="Utbg">
-      <h1>UT SCORE PREDICTOR</h1>
-   <div className="UtLayout">
-    <div className="Ut">
-      <form onSubmit={handleSubmit}>
-        <label>Chemistry</label>
-        <input
-          type="text"
-          value={Chemistry}
-          onChange={(e) => setChemistry(e.target.value)}
-          required
-          placeholder="Chemistry"
-        />
-        <label>Maths</label>
-        <input
-          type="text"
-          value={Maths}
-          onChange={(e) => setMaths(e.target.value)}
-          required
-          placeholder="Maths"
-        />
-        <label>Electronics</label>
-        <input
-          type="text"
-          value={Electronics}
-          onChange={(e) => setElectronics(e.target.value)}
-          required
-          placeholder="Electronics"
-        />
-        <label>Mechanical </label>
-        <input
-          type="text"
-          value={Mechanical}
-          onChange={(e) => setMechanical(e.target.value)}
-          required
-          placeholder="Mechanical"
-        />
-        <label>Soft Skills: </label>
-        <input
-          type="text"
-          value={SoftSkills}
-          onChange={(e) => setSoftSkills(e.target.value)}
-          required
-          placeholder="SoftSkills"
-        />
-        <button className="submit" type="submit">
-          Predict
-        </button>
-      </form>
-      {prediction && <p>Prediction: {prediction}</p>}
-      <h3>Total Score: {totalScore}</h3>
-      <h3>Percentage: {percentage}%</h3>
-      </div>
-      </div>
+      <div className="backrr">
+        <div className="Utbg">
+          <h1>UT SCORE PREDICTOR</h1>
+          <div className="UtLayout">
+            <div className="Ut">
+              <form onSubmit={handleSubmit}>
+                <label>Chemistry</label>
+                <input
+                  type="text"
+                  value={Chemistry}
+                  onChange={(e) => setChemistry(e.target.value)}
+                  required
+                  placeholder="Chemistry"
+                />
+                <label>Maths</label>
+                <input
+                  type="text"
+                  value={Maths}
+                  onChange={(e) => setMaths(e.target.value)}
+                  required
+                  placeholder="Maths"
+                />
+                <label>Electronics</label>
+                <input
+                  type="text"
+                  value={Electronics}
+                  onChange={(e) => setElectronics(e.target.value)}
+                  required
+                  placeholder="Electronics"
+                />
+                <label>Mechanical </label>
+                <input
+                  type="text"
+                  value={Mechanical}
+                  onChange={(e) => setMechanical(e.target.value)}
+                  required
+                  placeholder="Mechanical"
+                />
+                <label>Soft Skills: </label>
+                <input
+                  type="text"
+                  value={SoftSkills}
+                  onChange={(e) => setSoftSkills(e.target.value)}
+                  required
+                  placeholder="SoftSkills"
+                />
+                <button className="submit" type="submit">
+                  Predict
+                </button>
+              </form>
+              {prediction && <p>Prediction: {prediction}</p>}
+              <h3>Total Score: {totalScore}</h3>
+              <h3>Percentage: {percentage}%</h3>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

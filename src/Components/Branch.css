@@ -1,72 +1,71 @@
 * {
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
-    font-size: 16px;
-    font-family: "Poppins", sans-serif;
-  }
-  .Ut {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.2em;
-  }
-  .Ut input {
-   background-color: bisque;
-    width: 20rem;
-    display: block;
-    outline: none;
-    border: solid 1px #bcbec0;
-    height: 2.5rem;
-    border-radius: 0.5rem;
-    padding: 1rem;
-    margin-bottom: 1.4rem;
-  }
-  .UtLayout {
-    background-color: #c187587d;
-   justify-content: center;
-    border: solid 3px #5882c1;
-    border-radius: 2.5rem;
-    display: flex;
-    padding: 0 2em;
-    backdrop-filter: blur(10px);
-    gap: 3rem;
-    padding: 2rem;
-    min-height: 350px;
-  }
-  .Ut button {
-    width: 20rem;
-    display: block;
-    outline: none;
-    border: solid 1px #bcbec0;
-    height: 2.5rem;
-    border-radius: 0.5rem;
-    background-color: black;
-    color: white;
-    cursor: pointer;
-  }
-  .Ut label {
-    color: white;
-    margin-bottom: 1rem;
-  }
-  .Utbg{
-    display: flex;
-    flex-direction: column;
-   align-items: center;
-   height: 100vh;
-   justify-content: center;
-  }
-  .Utbg h1 {
-    font-size: 2rem !important;
-    padding: 0.5rem;
-margin-top: 1rem;
-  
-  }
-  .Ut h3 {
-    font-size: 1rem ;
-    color: white;
-  }
-  .Ut p{
-    width: 20rem;
-  }
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+.Ut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2em;
+}
+.Ut input {
+  background-color: bisque;
+  width: 20rem;
+  display: block;
+  outline: none;
+  border: solid 1px #bcbec0;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.4rem;
+}
+.UtLayout {
+  background-color: #c187587d;
+  justify-content: center;
+  border: solid 3px #5882c1;
+  border-radius: 2.5rem;
+  display: flex;
+  padding: 0 2em;
+  backdrop-filter: blur(10px);
+  gap: 3rem;
+  padding: 2rem;
+  min-height: 350px;
+}
+.Ut button {
+  width: 20rem;
+  display: block;
+  outline: none;
+  border: solid 1px #bcbec0;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+.Ut label {
+  color: white;
+  margin-bottom: 1rem;
+}
+.Utbg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+}
+.Utbg h1 {
+  font-size: 2rem !important;
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+.Ut h3 {
+  font-size: 1rem;
+  color: white;
+}
+.Ut p {
+  width: 20rem;
+}

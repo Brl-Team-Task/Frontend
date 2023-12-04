@@ -1,85 +1,88 @@
 * {
-    margin: 0%;
-    padding: 0%;
-    box-sizing: border-box;
-    font-size: 16px;
-    font-family: "Poppins", sans-serif;
-  }
-  .PreImg{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+.PreImg {
   padding-top: 1rem;
   padding-left: 2rem;
   /* background-image: url(../assets/Preimg.png); */
-    z-index: -1;
-    position: absolute;
- 
-  }
-  /* .PreImg img {
+  z-index: -1;
+  position: absolute;
+}
+/* .PreImg img {
     height:45rem
   } */
-  .Predict{
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap ;
-  }
-  .Utimg{
-    background: url(../assets/ut.png);
-    width:23rem;
-    background-repeat: no-repeat;
-    /* background-size: cover; */
-    display: flex;
-    flex-direction: column;
-    gap:230px;
-    align-items: center;
-    height:500px;
-    justify-content: space-around;
-  }
-  .Utimg h1,.Branchimg h1{
-    font-size: 2rem !important;
-    color: rgba(0, 0, 0, 0.91);
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-  .Oeimg h1{
-    font-size: 2rem !important;
-    color: rgba(0, 0, 0, 0.91);
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  }
-  .Utimg a,.Branchimg a,.Oeimg a{
-    text-decoration: none;
-  }
-  .click{
-    font-size: 1.5rem !important;
-    background-color: #00A7F4;
-    width:13.5rem;
-    border-radius: 0.8rem;
-    padding: 0.5rem;
-    color: white;
-    border:2px solid #00A7F4;
-    box-shadow: 4px 4px 4px #00A7F4;
-  }
-  .Branchimg{
-    background: url(../assets/Branch.png);
-    width:23rem;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    gap:230px;
-    align-items: center;
-    height: 500px;
-    justify-content: space-around;
-  }
-  .Oeimg{
-    background: url(../assets/Oe.png);
-    width:23rem;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    gap:210px;
-    align-items: center;
-    height:500px;
-    justify-content: space-around;
-  }
-  @media(max-width:800px){
-.Predict{
-  flex-direction: column;
+.Predict {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: 2em 0;
 }
+.Utimg {
+  background: url(../assets/ut.png);
+  width: 23rem;
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  display: flex;
+  flex-direction: column;
+  gap: 230px;
+  align-items: center;
+  height: 500px;
+  justify-content: space-around;
+}
+.Utimg h1,
+.Branchimg h1 {
+  font-size: 2rem !important;
+  color: rgba(0, 0, 0, 0.91);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.Oeimg h1 {
+  font-size: 2rem !important;
+  color: rgba(0, 0, 0, 0.91);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.Utimg a,
+.Branchimg a,
+.Oeimg a {
+  text-decoration: none;
+}
+.click {
+  font-size: 1.5rem !important;
+  background-color: #00a7f4;
+  width: 13.5rem;
+  border-radius: 0.8rem;
+  padding: 0.5rem;
+  color: white;
+  border: 2px solid #00a7f4;
+  box-shadow: 4px 4px 4px #00a7f4;
+}
+.Branchimg {
+  background: url(../assets/Branch.png);
+  width: 23rem;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  gap: 230px;
+  align-items: center;
+  height: 500px;
+  justify-content: space-around;
+}
+.Oeimg {
+  background: url(../assets/Oe.png);
+  width: 23rem;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  gap: 210px;
+  align-items: center;
+  height: 500px;
+  justify-content: space-around;
+}
+@media (max-width: 800px) {
+  .Predict {
+    flex-direction: column;
   }
+}
